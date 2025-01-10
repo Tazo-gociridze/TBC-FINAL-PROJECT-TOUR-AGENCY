@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "npx prettier . --write",
+    "check-types": "tsc --noEmit",
     "prepare": "husky install"
   },
   "dependencies": {
