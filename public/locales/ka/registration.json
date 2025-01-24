@@ -1,10 +1,10 @@
 {
-    "registration": "რეგისტრაცია",
-    "usernamePlaceholder": "მომხმარებლის სახელი",
-    "emailPlaceholder": "ემაილი",
-    "passwordPlaceholder": "პაროლი",
-    "repeatPasswordPlaceholder": "გაიმეორეთ პაროლი",   
-    "dontHaveAnAccount": "უკვე გააქვთ ანგარიში?",
-    "createAccount": "ანგარიშის შექმნა",
-    "login": "შესვლა"
+  "registration": "რეგისტრაცია",
+  "usernamePlaceholder": "მომხმარებლის სახელი",
+  "emailPlaceholder": "ემაილი",
+  "passwordPlaceholder": "პაროლი",
+  "repeatPasswordPlaceholder": "გაიმეორეთ პაროლი",
+  "dontHaveAnAccount": "უკვე გააქვთ ანგარიში?",
+  "createAccount": "ანგარიშის შექმნა",
+  "login": "შესვლა"
 }

@@ -19,7 +19,6 @@ const useSwitchLanguage = () => {
     };
   }, []);
 
-
   return { isSwitchLang, openSwitchLanguage, switchLangRef, setIsSwitchLang };
 };
 

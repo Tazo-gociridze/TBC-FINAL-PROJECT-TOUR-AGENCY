@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const useLoginLogic = () => {
   const navigate = useNavigate();
   const [, setUser] = useAuth();
-  
+
   const { control, handleSubmit } = useForm<LoginForm>({
     defaultValues: {
       email: '',
@@ -24,8 +24,6 @@ const useLoginLogic = () => {
       setUser(user);
     },
   });
-
-  
 
   const onSubmit = (loginValues: LoginForm) => {
     mutate(loginValues);

@@ -12,11 +12,9 @@ const HomeMainSectionText = () => {
           strings={[t('home-typing-text-1'), t('home-typing-text-2'), t('home-typing-text-3')]}
         />
       </h1>
-      <p className="mb-10 text-lg text-[white]">
-        {t('home-introduction-text')}
-      </p>
+      <p className="mb-10 text-lg text-[white]">{t('home-introduction-text')}</p>
       <Link to={'tours'}>
-        <Button>{t("view-other-tours-btn")}</Button>
+        <Button>{t('view-other-tours-btn')}</Button>
       </Link>
     </div>
   );

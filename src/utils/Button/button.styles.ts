@@ -5,7 +5,9 @@ export const ButtonStyles = cva(
   {
     variants: {
       variant: {
-        default: ['rounded-md bg-[var(--main-color)] px-6 py-2 text-[var(--white-color)] font-medium'],
+        default: [
+          'rounded-md bg-[var(--main-color)] px-6 py-2 text-[var(--white-color)] font-medium',
+        ],
         secondary: ['rounded-md bg-black px-6 py-2 text-[var(--white-color)]'],
       },
       size: {},

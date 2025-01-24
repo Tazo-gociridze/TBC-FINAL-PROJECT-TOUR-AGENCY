@@ -1,8 +1,7 @@
-import { FC } from "react";
-import { EmailConfirmationProps } from "../..";
+import { FC } from 'react';
+import { EmailConfirmationProps } from '../..';
 
-
-const ConfirmationContent: FC<EmailConfirmationProps> = ({getEmailServiceLink, email}) => {
+const ConfirmationContent: FC<EmailConfirmationProps> = ({ getEmailServiceLink, email }) => {
   return (
     <>
       <p className="mb-6 text-center leading-relaxed text-gray-600">

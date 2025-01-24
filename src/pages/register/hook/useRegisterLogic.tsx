@@ -27,7 +27,7 @@ const useRegisterLogic = () => {
       console.error('Error on register', e);
     }
   };
-  
+
   const getEmailServiceLink = (email: string | null) => {
     if (!email) {
       return null;

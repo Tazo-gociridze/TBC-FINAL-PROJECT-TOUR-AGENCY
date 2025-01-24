@@ -1,12 +1,12 @@
 import Button from '@/utils/Button/Button';
 import { ChangeLangAndThemeContainerStyles, ChangeThemeStyles } from '../../header.styles';
 import HeaderChangeLang from '../header-change-lang';
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useHeaderToolsLogic from '../../hooks/header-tools-logic';
 
 const HeaderTools = () => {
   const { user, themeIcon, changeTheme, t, handleLogout } = useHeaderToolsLogic();
-  
+
   return (
     <div className={ChangeLangAndThemeContainerStyles()}>
       <HeaderChangeLang />

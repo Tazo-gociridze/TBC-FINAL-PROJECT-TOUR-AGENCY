@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <script>
-    const theme = localStorage.getItem('theme');
-    document.documentElement.className = theme === 'dark' ? 'dark no-transition' : 'no-transition';
-     setTimeout(() => {
-       document.documentElement.classList.remove('no-transition');
-     }, 100)
+      const theme = localStorage.getItem('theme');
+      document.documentElement.className =
+        theme === 'dark' ? 'dark no-transition' : 'no-transition';
+      setTimeout(() => {
+        document.documentElement.classList.remove('no-transition');
+      }, 100);
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/images/travel-logo.png" />

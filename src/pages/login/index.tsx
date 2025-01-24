@@ -4,13 +4,7 @@ import useLoginLogic from './hook/useLoginLogic';
 import LoginFooter from './components/login-footer';
 
 const Login = () => {
-
-  const {
-    control,
-    handleSubmit,
-    onSubmit,
-  } = useLoginLogic()
-
+  const { control, handleSubmit, onSubmit } = useLoginLogic();
 
   return (
     <section className="w-100 flex h-screen flex-col items-center justify-center gap-y-10">
@@ -22,7 +16,7 @@ const Login = () => {
         autoComplete="chrome-off"
       >
         <LoginInputs control={control} />
-        <LoginFooter/>
+        <LoginFooter />
       </form>
     </section>
   );

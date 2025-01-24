@@ -5,13 +5,12 @@ import useAppTheme from './nested-hooks/useAppTheme';
 import useSwitchLanguage from './nested-hooks/useSwitchLanguage';
 import useAppLanguage from './nested-hooks/useAppLanguage';
 
-
 const useHeaderLogic = () => {
-    const { isDarkMode, changeTheme } = useAppTheme();
-    const { isSwitchLang, openSwitchLanguage, switchLangRef, setIsSwitchLang } = useSwitchLanguage();
-    const { switchLang, switchLangHandler } = useAppLanguage(setIsSwitchLang);
-    const themeIcon = useMemo(() => isDarkMode ? <IoMdSunny /> : <FaMoon />, [isDarkMode]);
-    
+  const { isDarkMode, changeTheme } = useAppTheme();
+  const { isSwitchLang, openSwitchLanguage, switchLangRef, setIsSwitchLang } = useSwitchLanguage();
+  const { switchLang, switchLangHandler } = useAppLanguage(setIsSwitchLang);
+  const themeIcon = useMemo(() => (isDarkMode ? <IoMdSunny /> : <FaMoon />), [isDarkMode]);
+
   return {
     switchLang,
     isDarkMode,

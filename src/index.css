@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
@@ -16,11 +15,15 @@
   --main-bg-1: url('./images/Home/main-backgrounds/01.jpeg');
   --main-bg-2: url('./images/Home/main-backgrounds/02.jpg');
   --main-bg-3: url('./images/Home/main-backgrounds/03.jpg');
-  transition: background-color 0.4s, color 0.4s ease; 
+  transition:
+    background-color 0.4s,
+    color 0.4s ease;
 }
 
 html {
-  transition: background-color 0.4s, color 0.4s ease;
+  transition:
+    background-color 0.4s,
+    color 0.4s ease;
 }
 
 html.dark {
@@ -29,11 +32,9 @@ html.dark {
   color: #eee;
 }
 html.no-transition {
-  transition: none; 
+  transition: none;
 }
 
 .ant-carousel .slick-arrow {
-  font-size: 100px; 
+  font-size: 100px;
 }
-
-

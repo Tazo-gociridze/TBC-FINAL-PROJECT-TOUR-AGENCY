@@ -31,19 +31,18 @@ const useToursLogic = () => {
 
   const handleSearch = (value: string) => {
     setSearchTerm(value);
-    updateQueryParams({ search: value, sort }); 
+    updateQueryParams({ search: value, sort });
   };
 
   const handleSort = (value: string) => {
     if (value === 'none') {
-      setSort(''); 
+      setSort('');
       updateQueryParams({ sort: '', search: searchTerm });
     } else {
       setSort(value);
       updateQueryParams({ sort: value, search: searchTerm });
     }
   };
-
 
   return {
     data,
@@ -52,7 +51,7 @@ const useToursLogic = () => {
     searchTerm,
     sort,
     isLoading,
-    isError
+    isError,
   };
 };
 

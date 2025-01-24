@@ -1,6 +1,6 @@
-import Button from "@/utils/Button/Button";
-import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import Button from '@/utils/Button/Button';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const RegisterFooter = () => {
   const { t } = useTranslation('registration');

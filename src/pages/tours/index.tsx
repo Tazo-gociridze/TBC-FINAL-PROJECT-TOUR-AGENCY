@@ -38,7 +38,7 @@ const Tours = () => {
     <section className={sectionStyles()}>
       <ToursTitle />
       <TourFilters handleSearch={handleSearch} handleSort={handleSort} />
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {Array.isArray(data) && data.length > 0 ? (
           data.map((tour) => <TourCard key={tour.id} tour={tour} />)
         ) : (

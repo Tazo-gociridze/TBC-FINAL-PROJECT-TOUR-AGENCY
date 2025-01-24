@@ -27,7 +27,7 @@ const TourCard: FC<{ tour: TourData }> = ({ tour }) => {
         title={<h3 className="text-2xl font-semibold text-gray-800 dark:text-white">{title}</h3>}
         description={
           <>
-            <p className="text-base text-gray-700 dark:text-gray-300 line-clamp-3">{description}</p>
+            <p className="line-clamp-3 text-base text-gray-700 dark:text-gray-300">{description}</p>
             <div className="mt-3">
               <p className="text-lg font-semibold text-yellow-500">{`Price: $${price}`}</p>
               {start_date && (
@@ -36,7 +36,7 @@ const TourCard: FC<{ tour: TourData }> = ({ tour }) => {
                 </p>
               )}
               {end_date && (
-                <p className="text-sm mb-5 text-gray-600 dark:text-gray-400">
+                <p className="mb-5 text-sm text-gray-600 dark:text-gray-400">
                   End Date: {formatDate(end_date)}
                 </p>
               )}
