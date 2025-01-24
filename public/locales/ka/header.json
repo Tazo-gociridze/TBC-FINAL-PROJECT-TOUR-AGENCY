@@ -1,7 +1,8 @@
 {
-    "navHome": "მთავარი",
-    "navTours": "ტურები",
-    "navServices": "სერვისები",
+  "navHome": "მთავარი",
+  "navTours": "ტურები",
+  "navServices": "სერვისები",
 
-    "headerLogin": "შესვლა"
+  "headerLogin": "შესვლა",
+  "headerLogout": "გასვლა"
 }

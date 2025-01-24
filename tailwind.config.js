@@ -7,7 +7,8 @@ export default {
       'main-background-1': "url('@/images/Home/main-backgrounds/01.jpeg')",
       'main-background-2': "url('@/images/Home/main-backgrounds/02.jpg')",
       'main-background-3': "url('@/images/Home/main-backgrounds/03.jpg')",
-    }
+      'logo-bg': "url('@/images/travel-logo.png')",
+    },
   },
   plugins: [],
 };

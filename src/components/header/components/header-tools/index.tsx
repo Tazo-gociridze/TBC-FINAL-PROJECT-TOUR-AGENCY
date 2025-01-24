@@ -1,26 +1,26 @@
 import Button from '@/utils/Button/Button';
 import { ChangeLangAndThemeContainerStyles, ChangeThemeStyles } from '../../header.styles';
 import HeaderChangeLang from '../header-change-lang';
-import useHeaderLogic from '../../hooks/useHeaderLogic';
-import { Link } from 'react-router-dom';
-import qs from "qs"
-import { useTranslation } from 'react-i18next';
+import { Link, } from 'react-router-dom';
+import useHeaderToolsLogic from '../../hooks/header-tools-logic';
 
 const HeaderTools = () => {
-  const { themeIcon, changeTheme, initialParams } = useHeaderLogic();
-  const {t} = useTranslation("header")
-
-  const queryStr = qs.stringify(initialParams)
-
+  const { user, themeIcon, changeTheme, t, handleLogout } = useHeaderToolsLogic();
+  
   return (
     <div className={ChangeLangAndThemeContainerStyles()}>
       <HeaderChangeLang />
       <div onClick={changeTheme} className={ChangeThemeStyles()}>
         <span>{themeIcon}</span>
       </div>
-      <Link to={`/login?${queryStr}`}>
-        <Button>{t("headerLogin")}</Button>
-      </Link>
+
+      {user ? (
+        <Button onClick={handleLogout}>{t('headerLogout')}</Button>
+      ) : (
+        <Link to={`/login`}>
+          <Button>{t('headerLogin')}</Button>
+        </Link>
+      )}
     </div>
   );
 };

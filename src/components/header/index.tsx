@@ -5,7 +5,7 @@ import HeaderTools from './components/header-tools';
 
 const Header = () => {
   return (
-    <header className="fixed left-0 top-0 w-full bg-[#523435] py-8 transition-colors duration-500 dark:bg-[#161616]">
+    <header className="fixed left-0 top-0 w-full bg-[#0A2C00] py-5 transition-colors duration-500 dark:bg-[#161616] z-50">
       <FixedWidthWrapper>
         <HeaderLogo />
         <HeaderNav />

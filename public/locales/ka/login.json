@@ -1,4 +1,6 @@
 {
-    "emailPlaceholder": "ემაილი",
-    "passwordPlaceholder": "პაროლი"
+  "emailPlaceholder": "ემაილი",
+  "passwordPlaceholder": "პაროლი",
+  "doYouHaveAccount": "უკვე გააქვთ ანგარიში?",
+  "register": "რეგისტრაცია"
 }

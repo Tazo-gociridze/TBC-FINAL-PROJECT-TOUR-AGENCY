@@ -2,18 +2,22 @@ import georgiaImage from '@/images/Home/georgia.png';
 import usaImage from '@/images/Home/united-states.png';
 import { FC } from 'react';
 
-interface ChangeLangWindowProps{
-    switchLang: string,
-    isSwitchLang: boolean,
-    switchLangHandler: () => void
+interface ChangeLangWindowProps {
+  switchLang: string;
+  isSwitchLang: boolean;
+  switchLangHandler: () => void;
 }
 
-const ChangeLangWindow: FC<ChangeLangWindowProps> = ({switchLang, isSwitchLang, switchLangHandler}) => {
-const NOT_SELECTED_LANG = switchLang === 'en' ? 'ქა' : 'En'
-const NOT_SELECTED_LANG_SRC = switchLang === 'en' ? georgiaImage : usaImage
-const NOT_SELECTED_LANG_ALT = switchLang === 'en' ? 'USA flag' : 'Georgia flag'
+const ChangeLangWindow: FC<ChangeLangWindowProps> = ({
+  switchLang,
+  isSwitchLang,
+  switchLangHandler,
+}) => {
+  const NOT_SELECTED_LANG = switchLang === 'en' ? 'ქა' : 'En';
+  const NOT_SELECTED_LANG_SRC = switchLang === 'en' ? georgiaImage : usaImage;
+  const NOT_SELECTED_LANG_ALT = switchLang === 'en' ? 'USA flag' : 'Georgia flag';
 
-return (
+  return (
     <>
       {isSwitchLang && (
         <div className="absolute top-12 rounded-md bg-[#000000] shadow-md">

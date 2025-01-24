@@ -1,8 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import { ButtonStyles } from './button.styles';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-}
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<PropsWithChildren<ButtonProps>> = ({ children, ...props }) => {
   return (

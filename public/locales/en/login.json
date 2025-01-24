@@ -1,4 +1,6 @@
 {
-    "emailPlaceholder": "E-mail",
-    "passwordPlaceholder": "Password"
+  "emailPlaceholder": "E-mail",
+  "passwordPlaceholder": "Password",
+  "doYouHaveAccount": "Do you have an account?",
+  "register": "Registration"
 }

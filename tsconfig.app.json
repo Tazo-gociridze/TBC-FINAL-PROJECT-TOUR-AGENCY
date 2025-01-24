@@ -31,10 +31,10 @@
       ],
       "@components/*": [
         "src/components/*"
-      ],
+      ]
     }
   },
   "include": [
     "src"
-  ]
+, "src/store/auth/.ts"  ]
 }

@@ -2,22 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-.no-transition * {
-  transition: none !important;
-}
-
-:root {
-  --main-color: #DF6951;
-  --white-color: #fcf4f4;
-
-  --main-bg-1: url('./images/Home/main-backgrounds/01.jpeg');
-  --main-bg-2: url('./images/Home/main-backgrounds/02.jpg');
-  --main-bg-3: url('./images/Home/main-backgrounds/03.jpg');
-}
-
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --main-color: #2d97b8;
+  --white-color: #fcf4f4;
+
+  --main-bg-1: url('./images/Home/main-backgrounds/01.jpeg');
+  --main-bg-2: url('./images/Home/main-backgrounds/02.jpg');
+  --main-bg-3: url('./images/Home/main-backgrounds/03.jpg');
+  transition: background-color 0.4s, color 0.4s ease; 
+}
+
+html {
+  transition: background-color 0.4s, color 0.4s ease;
+}
+
+html.dark {
+  transition: 0.4s;
+  background-color: #222;
+  color: #eee;
+}
+html.no-transition {
+  transition: none; 
+}
+
+.ant-carousel .slick-arrow {
+  font-size: 100px; 
+}
+
+

@@ -1,7 +1,8 @@
 {
-    "navHome": "Home",
-    "navTours": "Tours",
-    "navServices": "Services",
+  "navHome": "Home",
+  "navTours": "Tours",
+  "navServices": "Services",
 
-    "headerLogin": "Login"
+  "headerLogin": "Login",
+  "headerLogout": "Logout"
 }

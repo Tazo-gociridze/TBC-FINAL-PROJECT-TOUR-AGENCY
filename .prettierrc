@@ -14,7 +14,7 @@
     {
       "files": "*.json",
       "options": {
-        "printWidth": 0, 
+        "printWidth": 0,
         "proseWrap": "preserve"
       }
     }

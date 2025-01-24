@@ -1,9 +1,16 @@
 import { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
-interface FixedWidthWrapperProps extends HTMLAttributes<HTMLDivElement> {}
+type FixedWidthWrapperProps = HTMLAttributes<HTMLDivElement>;
 
-const FixedWidthWrapper: FC<PropsWithChildren<FixedWidthWrapperProps>> = ({ children, ...props }) => {
-  return <div {...props} className="w-[1300px] m-auto flex items-center justify-between">{children}</div>;
+const FixedWidthWrapper: FC<PropsWithChildren<FixedWidthWrapperProps>> = ({
+  children,
+  ...props
+}) => {
+  return (
+    <div {...props} className="m-auto flex w-[1650px] items-center justify-between">
+      {children}
+    </div>
+  );
 };
 
 export default FixedWidthWrapper;

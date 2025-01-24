@@ -1,0 +1,10 @@
+{
+    "registration": "Registration",
+    "usernamePlaceholder": "Username",
+    "emailPlaceholder": "E-mail",
+    "passwordPlaceholder": "Password",
+    "repeatPasswordPlaceholder": "Repeat password",   
+    "dontHaveAnAccount": "Don't have an account?",
+    "createAccount": "Create account",
+    "login": "Login"
+}

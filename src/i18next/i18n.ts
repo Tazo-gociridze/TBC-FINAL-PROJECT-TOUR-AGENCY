@@ -16,13 +16,12 @@ i18n
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
-    ns: ["header", "login", "home", "tours", "services"],
-    defaultNS: "header",
-     detection: {
-        order: ['localStorage',  'navigator'],
-        caches: ['localStorage'],
-       }
+    ns: ['header', 'login', 'registration', 'home', 'tours', 'services'],
+    defaultNS: 'header',
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+    },
   });
 
 export default i18n;
-
