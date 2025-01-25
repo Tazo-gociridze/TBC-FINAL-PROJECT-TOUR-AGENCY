@@ -1,23 +1,31 @@
-import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+import { NavLink, useLocation } from "react-router-dom";
 
 const HeaderNav = () => {
-  const { t } = useTranslation('header');
+  const { t } = useTranslation("header");
+  const { pathname } = useLocation();
 
-  function navLinkStyle(isActive: boolean) {
-    return isActive ? 'text-[#77F8FF]' : 'hover:text-[#77F8FF]';
-  }
+  const isActiveLink = (to: string) => pathname === to;
 
   return (
     <nav className="flex gap-x-10 text-[19px] text-white">
-      <NavLink to={'/'} className={({ isActive }) => navLinkStyle(isActive)}>
-        {t('navHome')}
+      <NavLink
+        to="/"
+        className={isActiveLink("/") ? "text-blue-300" : "hover:text-blue-300"}
+      >
+        {t("navHome")}
       </NavLink>
-      <NavLink to={'/tours'} className={({ isActive }) => navLinkStyle(isActive)}>
-        {t('navTours')}
+      <NavLink
+        to="/tours"
+        className={isActiveLink("/tours") ? "text-blue-300" : "hover:text-blue-300"}
+      >
+        {t("navTours")}
       </NavLink>
-      <NavLink to={'/services'} className={({ isActive }) => navLinkStyle(isActive)}>
-        {t('navServices')}
+      <NavLink
+        to="/services"
+        className={isActiveLink("/services") ? "text-blue-300" : "hover:text-blue-300"}
+      >
+        {t("navServices")}
       </NavLink>
     </nav>
   );

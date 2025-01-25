@@ -3,6 +3,7 @@ import { formatDate } from '@/utils/FormatDate/FormatDate';
 import { cardStyles, cardMetaStyles, buttonStyles } from '../../tours.styles.ts';
 import { FC } from 'react';
 import { TourData } from '@/api/tours/tours-data/index.ts';
+import { Link } from 'react-router-dom';
 
 const TourCard: FC<{ tour: TourData }> = ({ tour }) => {
   const { id, title, description, price, start_date, end_date, image_url } = tour;
@@ -46,7 +47,9 @@ const TourCard: FC<{ tour: TourData }> = ({ tour }) => {
         className={cardMetaStyles()}
       />
       <div className="mt-4 flex justify-end">
-        <Button className={buttonStyles()}>View More</Button>
+        <Link to={`/tours/${id}`}>
+          <Button className={buttonStyles()}>View More</Button>
+        </Link>
       </div>
     </Card>
   );

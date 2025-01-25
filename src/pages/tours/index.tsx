@@ -1,14 +1,34 @@
 import { Empty, Spin } from 'antd';
-
 import TourCard from './components/tour-card/index.tsx';
 import TourFilters from './components/tour-filters/index.tsx';
 import ToursTitle from './components/tour-title/index.tsx';
+import { useInView } from 'react-intersection-observer'; // Для бесконечной прокрутки
+import { useEffect } from 'react';
+import { sectionStyles } from './tours.styles.ts';
 import useToursLogic from './hooks/useToursLogic.tsx';
 
-import { sectionStyles } from './tours.styles.ts';
-
 const Tours = () => {
-  const { data, handleSearch, handleSort, isLoading, isError } = useToursLogic();
+  const {
+    data,
+    handleSearch,
+    handleSort,
+    isLoading,
+    isError,
+    fetchNextPage,
+    hasNextPage, 
+  } = useToursLogic();
+
+  const { ref, inView } = useInView({
+    triggerOnce: false, 
+  });
+  
+  useEffect(() => {
+    console.log('inView:', inView); 
+    if (inView && hasNextPage) {
+      console.log('Fetching next page');
+      fetchNextPage(); 
+    }
+  }, [inView, fetchNextPage, hasNextPage]);
 
   if (isLoading) {
     return (
@@ -46,6 +66,7 @@ const Tours = () => {
             <Empty description="No tours available" />
           </div>
         )}
+        <div ref={ref}></div>
       </div>
     </section>
   );

@@ -3,8 +3,13 @@ import DarkenImage from '@/utils/DarkenImage/DarkenImage';
 import { Button } from 'antd';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-const CarouselItem: FC<{ tour: TourData }> = ({ tour }) => {
+interface CarouselItemProps {
+  tour: TourData; 
+}
+
+const CarouselItem: FC<CarouselItemProps> = ({ tour }) => {
   const contentStyle: React.CSSProperties = {
     margin: 0,
     height: '500px',
@@ -13,13 +18,15 @@ const CarouselItem: FC<{ tour: TourData }> = ({ tour }) => {
     backgroundImage: `url(${import.meta.env.VITE_SUPABASE_IMAGE_STORAGE}${tour.image_url})`,
   };
   const { t } = useTranslation('home');
-
+  
   return (
-    <div className="group h-full w-full bg-[black]">
+    <div className="group h-full w-full">
       <DarkenImage>
-        <div className="bg-main-background-3 bg-cover" style={contentStyle}>
+        <div className="bg-cover" style={contentStyle} >
           <div className="flex h-full w-full cursor-pointer items-center justify-center bg-[#00000057] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <Button className="px-10 py-4">{t('slider-btn')}</Button>
+            <Link to={`tours/${tour.id}`}>
+              <Button className="px-14 py-6 text-bold text-xl bg-[#ffffff85] text-white">{t('slider-btn')}</Button>
+            </Link>
           </div>
         </div>
       </DarkenImage>

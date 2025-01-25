@@ -1,17 +1,29 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { getTours } from '@/api/tours/tours-data';
 import qs from 'qs';
 
 const useToursLogic = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [sort, setSort] = useState(searchParams.get('sort') || 'price');
-  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
+  const searchSort = searchParams.get('sort');
+  const searchSearchTerm = searchParams.get('search') || '';
 
-  const { data, refetch, isLoading, isError } = useQuery({
+  const [sort, setSort] = useState(searchSort || ''); 
+  const [searchTerm, setSearchTerm] = useState(searchSearchTerm);
+
+  const {
+    data,
+    refetch,
+    isLoading,
+    isError,
+    fetchNextPage,
+    hasNextPage, 
+  } = useInfiniteQuery({
     queryKey: ['get-tours', { sort, searchTerm }],
-    queryFn: () => getTours(sort, searchTerm),
+    queryFn: ({ pageParam = 0 }) => getTours(sort, searchTerm, pageParam), 
+    initialPageParam: 0,
+    getNextPageParam: (lastPage) => lastPage.nextPage, 
     enabled: false,
   });
 
@@ -21,10 +33,7 @@ const useToursLogic = () => {
 
   const updateQueryParams = (newParams: Record<string, string>) => {
     const currentParams = Object.fromEntries(searchParams.entries());
-    const updatedParams = qs.stringify(
-      { ...currentParams, ...newParams },
-      { addQueryPrefix: true }
-    );
+    const updatedParams = qs.stringify({ ...currentParams, ...newParams }, { addQueryPrefix: true });
     window.history.pushState({}, '', updatedParams);
     setSearchParams(newParams);
   };
@@ -44,14 +53,40 @@ const useToursLogic = () => {
     }
   };
 
+  useEffect(() => {
+    if (!searchSort) {
+      setSort('');
+    }
+  }, [searchSort]);
+
+  const sortedData = data?.pages
+    .flatMap((page) => page.data)
+    .sort((a, b) => {
+
+      if (sort === '' || sort === 'none') {
+        return 0;
+      }
+
+      if (sort === 'price') {
+        return a.price - b.price;
+      }
+
+      if (sort === 'date') {
+        return new Date(a.start_date).getTime() - new Date(b.start_date).getTime();
+      }
+
+      return 0;
+    });
   return {
-    data,
+    data: sortedData,
     handleSearch,
     handleSort,
     searchTerm,
     sort,
     isLoading,
     isError,
+    fetchNextPage,
+    hasNextPage, 
   };
 };
 

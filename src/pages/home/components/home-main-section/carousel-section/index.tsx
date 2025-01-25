@@ -4,12 +4,14 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchLatestTours } from '@/api/tours/latest-tours';
 
 const HomeMainSectionCarousel = () => {
-  const { data } = useQuery({ queryKey: ['latest-tours'], queryFn: fetchLatestTours });
+  const { data, isPending } = useQuery({ queryKey: ['latest-tours'], queryFn: fetchLatestTours });
 
-  console.log(data);
+  const parentStyles = `absolute right-7 top-7 z-0 ${!isPending ? 'h-[500px]' : 'h-0'}
+   w-full bg-[var(--main-color)] opacity-80 dark:opacity-60`;
+
   return (
     <div className="relative shadow-2xl">
-      <div className="absolute right-7 top-7 z-0 h-[500px] w-full bg-[var(--main-color)] opacity-80 dark:opacity-60"></div>
+      <div className={parentStyles}></div>
       <div className="z-20">
         <ConfigProvider
           theme={{

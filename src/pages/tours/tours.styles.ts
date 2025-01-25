@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 export const sectionStyles = cva(
-  'mt-16 bg-gray-100 px-4 py-8 pt-16 dark:bg-gray-900 transition-[0.5s]'
+  'mt-16 bg-gray-100 px-4 py-8 pt-16 dark:bg-gray-900 transition-[0.5s] w-[1650px] m-auto'
 );
 
 export const titleStyles = cva('mb-8 text-4xl font-semibold text-gray-800 dark:text-white');
