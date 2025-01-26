@@ -8,7 +8,7 @@ const LoginFooter = () => {
   return (
     <>
       <Button style={{ padding: '12px 0' }}>{headerTr('headerLogin')}</Button>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between text-[11px] sm:text-[16px]">
         <span className="font-medium text-[#424242]">{t('doYouHaveAccount')}</span>
         <Link to={`/register`}>
           <span className="text-[var(--main-color)] hover:underline">{t('register')}</span>

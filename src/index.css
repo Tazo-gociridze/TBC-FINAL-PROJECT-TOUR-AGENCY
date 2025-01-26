@@ -27,7 +27,8 @@ html {
   background-color: rgba(128, 128, 128, 0.1);
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   position: relative;
@@ -47,3 +48,4 @@ html.no-transition {
 .ant-carousel .slick-arrow {
   font-size: 100px;
 }
+

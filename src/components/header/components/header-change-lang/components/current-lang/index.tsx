@@ -15,7 +15,7 @@ const CurrentLang: FC<CurrentLangProps> = ({ openSwitchLanguage, switchLang }) =
   return (
     <div
       onClick={openSwitchLanguage}
-      className="flex cursor-pointer items-center gap-x-1 rounded-md bg-[#00000031] text-sm lg:text-[18px] px-3 py-2"
+      className="flex cursor-pointer items-center gap-x-1 rounded-md bg-[#00000031] px-3 py-2 text-sm lg:text-[18px]"
     >
       <span>{changedLang}</span>
       <img className="h-3 w-3 lg:h-4 lg:w-4" src={changedLangSrc} alt={changedLangAlt} />

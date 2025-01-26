@@ -51,13 +51,21 @@ const HeaderMenu: FC<HeaderMenuProps> = ({ setIsMenuActive, isMenuActive }) => {
               <FaCircle />
             </span>
           </Link>
-          <Link className="hover:bg-[#305e20] dark:hover:bg-[#312f2f]" onClick={resetState} to={'tours'}>
+          <Link
+            className="hover:bg-[#305e20] dark:hover:bg-[#312f2f]"
+            onClick={resetState}
+            to={'tours'}
+          >
             <span>Tours</span>
             <span className="text-[11px]">
               <FaCircle />
             </span>
           </Link>
-          <Link className="hover:bg-[#305e20] dark:hover:bg-[#312f2f]" onClick={resetState} to={'services'}>
+          <Link
+            className="hover:bg-[#305e20] dark:hover:bg-[#312f2f]"
+            onClick={resetState}
+            to={'services'}
+          >
             <span>Services</span>
             <span className="text-[11px]">
               <FaCircle />

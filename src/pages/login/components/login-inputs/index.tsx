@@ -2,6 +2,7 @@ import { LoginForm } from '@/api/auth/auth.types';
 import { FC } from 'react';
 import { Control, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { Input } from 'antd'; 
 
 interface LoginInputsProps {
   control: Control<LoginForm>;
@@ -15,7 +16,7 @@ const LoginInputs: FC<LoginInputsProps> = ({ control }) => {
         name="email"
         control={control}
         rules={{ required: true }}
-        render={({ field }) => <input {...field} placeholder={t('emailPlaceholder')} />}
+        render={({ field }) => <Input {...field} placeholder={t('emailPlaceholder')} />}
       />
 
       <Controller
@@ -23,7 +24,7 @@ const LoginInputs: FC<LoginInputsProps> = ({ control }) => {
         control={control}
         rules={{ required: true }}
         render={({ field }) => (
-          <input {...field} type="password" placeholder={t('passwordPlaceholder')} />
+          <Input.Password {...field} placeholder={t('passwordPlaceholder')} />
         )}
       />
     </div>

@@ -18,12 +18,6 @@ const HeaderNav = () => {
       >
         {t('navTours')}
       </NavLink>
-      <NavLink
-        to="/services"
-        className={isActiveLink('/services') ? 'text-blue-300' : 'hover:text-blue-300'}
-      >
-        {t('navServices')}
-      </NavLink>
     </nav>
   );
 };

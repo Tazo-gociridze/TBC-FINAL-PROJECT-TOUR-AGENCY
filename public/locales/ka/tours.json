@@ -1,11 +1,11 @@
 {
-    "tours-title": "ჩვენი ექსკლუზიური ტურები",
-    "tours-search-placeholder": "ტურის ძებნა...",
-    "no-tours-available": "ტური არ არის ხელმისაწვდომი",
-    "tour-view-more": "უყურეთ დამატებით",
-    "tour-error-message": "დაფიქსირდა შეცდომა ტურების ჩატვირთვისას. გთხოვთ სცადოთ ხელახლა.",
-    
-    "non-selected": "არ არის არჩეული",
-    "sort-by-price": "სორტირება ფასით",
-    "sort-by-date": "სორტირება თარიღით"
+  "tours-title": "ჩვენი ექსკლუზიური ტურები",
+  "tours-search-placeholder": "ტურის ძებნა...",
+  "no-tours-available": "ტური არ არის ხელმისაწვდომი",
+  "tour-view-more": "უყურეთ დამატებით",
+  "tour-error-message": "დაფიქსირდა შეცდომა ტურების ჩატვირთვისას. გთხოვთ სცადოთ ხელახლა.",
+
+  "non-selected": "არ არის არჩეული",
+  "sort-by-price": "სორტირება ფასით",
+  "sort-by-date": "სორტირება თარიღით"
 }

@@ -2,6 +2,7 @@ import { RegistrationForm } from '@/api/auth/auth.types';
 import { FC } from 'react';
 import { Control, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { Input } from 'antd';
 
 interface RegisterInputsProps {
   control: Control<RegistrationForm>;
@@ -15,20 +16,26 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control }) => {
         name="username"
         control={control}
         rules={{ required: true }}
-        render={({ field }) => <input {...field} placeholder={t('usernamePlaceholder')} />}
+          render={({ field }) => <Input {...field} placeholder={t('usernamePlaceholder')} />}
       />
       <Controller
         name="email"
         control={control}
         rules={{ required: true }}
-        render={({ field }) => <input {...field} placeholder={t('emailPlaceholder')} />}
+        render={({ field }) => <Input {...field} placeholder={t('emailPlaceholder')} />}
+      />
+      <Controller
+        name="phone"
+        control={control}
+        rules={{ required: true }}
+          render={({ field }) => <Input type="tel" {...field} placeholder={t('phone-number')} />}
       />
       <Controller
         name="password"
         control={control}
         rules={{ required: true }}
         render={({ field }) => (
-          <input {...field} type="password" placeholder={t('passwordPlaceholder')} />
+            <Input.Password {...field} placeholder={t('passwordPlaceholder')} />
         )}
       />
       <Controller
@@ -36,7 +43,7 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control }) => {
         control={control}
         rules={{ required: true }}
         render={({ field }) => (
-          <input {...field} type="password" placeholder={t('repeatPasswordPlaceholder')} />
+            <Input.Password {...field} placeholder={t('repeatPasswordPlaceholder')} />
         )}
       />
     </div>

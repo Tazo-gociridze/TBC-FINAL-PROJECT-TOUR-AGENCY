@@ -2,14 +2,14 @@ import { Empty, Spin } from 'antd';
 import TourCard from './components/tour-card/index.tsx';
 import TourFilters from './components/tour-filters/index.tsx';
 import ToursTitle from './components/tour-title/index.tsx';
-import { useInView } from 'react-intersection-observer'; 
+import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { sectionStyles } from './tours.styles.ts';
 import useToursLogic from './hooks/useToursLogic.tsx';
 import { useTranslation } from 'react-i18next';
 
 const Tours = () => {
-  const { t } = useTranslation('tours')
+  const { t } = useTranslation('tours');
   const { data, handleSearch, handleSort, isLoading, isError, fetchNextPage, hasNextPage } =
     useToursLogic();
 
@@ -43,7 +43,7 @@ const Tours = () => {
         <ToursTitle />
         <TourFilters handleSearch={handleSearch} handleSort={handleSort} />
         <div className="flex h-96 items-center justify-center">
-          <p>{t("tour-error-message")}</p>
+          <p>{t('tour-error-message')}</p>
         </div>
       </section>
     );
@@ -57,8 +57,8 @@ const Tours = () => {
         {Array.isArray(data) && data.length > 0 ? (
           data.map((tour) => <TourCard key={tour.id} tour={tour} />)
         ) : (
-          <div className="col-span-full flex items-center justify-center h-[500px]">
-            <Empty description={t("no-tours-available")} />
+          <div className="col-span-full flex h-[500px] items-center justify-center">
+            <Empty description={t('no-tours-available')} />
           </div>
         )}
         <div ref={ref}></div>

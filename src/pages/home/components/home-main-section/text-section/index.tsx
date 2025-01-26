@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const HomeMainSectionText = () => {
   const { t } = useTranslation('home');
   return (
-    <div className="pl-32">
+    <div className="pl-7 2xl:pl-32">
       <h1 className="mb-10 text-3xl font-medium text-white">
         <TypingText
           strings={[t('home-typing-text-1'), t('home-typing-text-2'), t('home-typing-text-3')]}

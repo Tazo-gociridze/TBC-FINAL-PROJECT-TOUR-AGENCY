@@ -10,7 +10,7 @@ const HomeMainSectionCarousel = () => {
    w-full bg-[var(--main-color)] opacity-80 dark:opacity-60`;
 
   return (
-    <div className="relative shadow-2xl">
+    <div className="relative shadow-2xl w-[90%] m-auto">
       <div className={parentStyles}></div>
       <div className="z-20">
         <ConfigProvider
@@ -22,7 +22,6 @@ const HomeMainSectionCarousel = () => {
             },
           }}
         >
-          
           <Carousel arrows infinite={true} autoplay autoplaySpeed={3000} draggable>
             {data?.map((tour) => <CarouselItem key={tour.id} tour={tour} />)}
           </Carousel>

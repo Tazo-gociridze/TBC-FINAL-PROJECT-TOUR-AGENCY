@@ -25,6 +25,8 @@ export const register = async (registrationValues: RegistrationForm) => {
       const { error: userProfileError } = await supabase.from('user_profiles').insert({
         user_id: userId,
         username: registrationValues.username,
+        phone: registrationValues.phone,
+        email: registrationValues.email,
       });
 
       if (userProfileError) {

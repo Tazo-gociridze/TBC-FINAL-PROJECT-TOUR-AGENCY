@@ -17,7 +17,7 @@ const TourFilters = ({ handleSearch, handleSort }: TourFiltersLogicProps) => {
       <Col xs={24} sm={12} md={8}>
         <Input
           prefix={<SearchOutlined />}
-          placeholder={t("tours-search-placeholder")}
+          placeholder={t('tours-search-placeholder')}
           value={searchTerm}
           onChange={(e) => handleSearchChange(e.target.value)}
           allowClear
@@ -29,7 +29,7 @@ const TourFilters = ({ handleSearch, handleSort }: TourFiltersLogicProps) => {
         <Select value={sort} onChange={handleSortChange} className={selectStyles()}>
           <Option value="none">{t('non-selected')}</Option>
           <Option value="price">{t('sort-by-price')}</Option>
-          <Option value="date">{t('sort-by-date')}</Option> 
+          <Option value="date">{t('sort-by-date')}</Option>
         </Select>
       </Col>
     </Row>
