@@ -4,16 +4,15 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 const { Paragraph } = Typography;
 
+interface ProfileInfoProps {
+  data: UserProfile | null | undefined;
+}
 
-  interface ProfileInfoProps {
-    data: UserProfile | null | undefined;
+const ProfileInfo: FC<ProfileInfoProps> = ({ data }) => {
+  const { t } = useTranslation('profile');
+  if (!data) {
+    return <Spin size="default" />;
   }
-
-  const ProfileInfo: FC<ProfileInfoProps> = ({ data }) => {
-    const {t} = useTranslation('profile')
-     if (!data) {
-        return <Spin size='default'/>;
-    }
   return (
     <div>
       <Paragraph>

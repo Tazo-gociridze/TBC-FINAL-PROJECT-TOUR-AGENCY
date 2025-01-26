@@ -1,6 +1,6 @@
-import { FC,  ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
-const ContactItem: FC<{children: ReactNode, text: string}> = ({ children, text }) => {
+const ContactItem: FC<{ children: ReactNode; text: string }> = ({ children, text }) => {
   return (
     <li>
       <span className="flex items-center gap-x-3">

@@ -11,13 +11,13 @@ const Profile = lazy(() => import('@/pages/profile'));
 const TourDetails = lazy(() => import('../pages/tour-details'));
 
 export {
-    MainLayout,
-    Login,
-    Register,
-    AuthGuard,
-    Tours,
-    Home,
-    AuthGuardReverse,
-    Profile,
-    TourDetails
-}
+  MainLayout,
+  Login,
+  Register,
+  AuthGuard,
+  Tours,
+  Home,
+  AuthGuardReverse,
+  Profile,
+  TourDetails,
+};

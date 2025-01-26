@@ -7,15 +7,15 @@ const FooterContact = () => {
     <div className="self-start text-white">
       <ContactTitle />
       <ul className="text-sm *:mb-3 lg:text-xl">
-        <ContactItem text='travelworld@gmail.com'>
+        <ContactItem text="travelworld@gmail.com">
           <CiMail />
         </ContactItem>
 
-        <ContactItem text='995-599-99-99'>
-          <CiPhone /> 
+        <ContactItem text="995-599-99-99">
+          <CiPhone />
         </ContactItem>
 
-        <ContactItem text='Vakhtang gorgasali street 11'>
+        <ContactItem text="Vakhtang gorgasali street 11">
           <CiLocationOn />
         </ContactItem>
       </ul>

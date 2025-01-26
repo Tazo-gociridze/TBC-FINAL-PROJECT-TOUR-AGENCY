@@ -1,5 +1,5 @@
-import { FaFacebookSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
+import { FaFacebookSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
+import { FaSquareInstagram } from 'react-icons/fa6';
 
 const SocialIcons = () => {
   return (

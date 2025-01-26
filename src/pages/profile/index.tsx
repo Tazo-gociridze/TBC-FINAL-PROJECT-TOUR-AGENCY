@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, Typography,  } from 'antd';
+import { Card, Typography } from 'antd';
 
 import ProfileForm from './components/profile-form';
 import ProfileInfo from './components/profile-info';
@@ -14,8 +14,8 @@ export interface ProfileFormValues {
   phone: string;
 }
 
-const Profile:FC = () => {
-   const {
+const Profile: FC = () => {
+  const {
     isEditing,
     control,
     handleSubmit,
@@ -23,13 +23,13 @@ const Profile:FC = () => {
     handleLogoutProfile,
     handleCancelEdit,
     handleEditClick,
-    data
-   } = useProfileLogic()
-   const {t} = useTranslation('profile')
+    data,
+  } = useProfileLogic();
+  const { t } = useTranslation('profile');
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100 dark:bg-[#00000000] duration-300 p-4">
+    <div className="flex h-screen items-center justify-center bg-gray-100 p-4 duration-300 dark:bg-[#00000000]">
       <Card
-        className="w-full max-w-2xl rounded-lg bg-white dark:bg-gray-300 !dark:text-white p-6 shadow-md md:p-8"
+        className="!dark:text-white w-full max-w-2xl rounded-lg bg-white p-6 shadow-md md:p-8 dark:bg-gray-300"
         title={<Title level={3}>{t('profile')}</Title>}
       >
         {isEditing ? (

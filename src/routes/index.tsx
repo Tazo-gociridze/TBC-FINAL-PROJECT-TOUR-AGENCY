@@ -7,7 +7,7 @@ type RouteType = NavRouteType | AuthRouteType;
 
 export const ROUTES = (
   <Routes>
-    <Route path='/' element={<MainLayout />}>
+    <Route path="/" element={<MainLayout />}>
       {NAV_ROUTES.map((route: RouteType) => (
         <Route key={route.path} path={route.path} element={route.element} />
       ))}

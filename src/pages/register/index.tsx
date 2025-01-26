@@ -16,7 +16,7 @@ const Register = () => {
         <>
           <RegisterHeader error={error} isPending={isPending} />
           <form
-            className="flex w-[310px] sm:w-[500px] flex-col gap-y-5 rounded-lg bg-[#faf7f7] p-8 shadow-sm"
+            className="flex w-[310px] flex-col gap-y-5 rounded-lg bg-[#faf7f7] p-8 shadow-sm sm:w-[500px]"
             onSubmit={handleSubmit(onSubmit)}
             action=""
             autoComplete="chrome-off"

@@ -13,7 +13,7 @@ const useProfileLogic = () => {
   const [user] = useAuth();
   const [isEditing, setIsEditing] = useState(false);
 
-  const { t } = useTranslation('profile')
+  const { t } = useTranslation('profile');
 
   const { data, refetch } = useQuery({
     queryKey: ['userProfile', user?.id],
@@ -84,7 +84,7 @@ const useProfileLogic = () => {
     handleLogoutProfile,
     handleCancelEdit,
     handleEditClick,
-    data
+    data,
   };
 };
 

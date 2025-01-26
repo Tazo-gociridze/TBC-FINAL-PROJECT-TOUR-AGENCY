@@ -10,7 +10,7 @@ const HomeMainSectionCarousel = () => {
    w-full bg-[var(--main-color)] opacity-80 dark:opacity-60`;
 
   return (
-    <div className="relative shadow-2xl w-[90%] m-auto">
+    <div className="relative m-auto w-[90%] shadow-2xl">
       <div className={parentStyles}></div>
       <div className="z-20">
         <ConfigProvider

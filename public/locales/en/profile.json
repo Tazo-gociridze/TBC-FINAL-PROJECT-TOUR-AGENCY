@@ -1,14 +1,13 @@
 {
-    "profile": "Profile",
-    "username": "Name:",
-    "number": "Phone Number:",
+  "profile": "Profile",
+  "username": "Name:",
+  "number": "Phone Number:",
 
-    "logout": "Logout",
-    "edit": "Edit Profile",
-    "save": "Save",
-    "cancel": "Cancel",
-    "update-message": "Profile Updated Successfully",
-    "Enter-your-name": "Enter your name...",
-    "Enter-your-phone-number": "Enter your phone number..."
-}     
- 
+  "logout": "Logout",
+  "edit": "Edit Profile",
+  "save": "Save",
+  "cancel": "Cancel",
+  "update-message": "Profile Updated Successfully",
+  "Enter-your-name": "Enter your name...",
+  "Enter-your-phone-number": "Enter your phone number..."
+}

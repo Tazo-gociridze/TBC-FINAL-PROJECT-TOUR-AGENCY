@@ -1,4 +1,3 @@
-
 const MapLocation = () => {
   return (
     <div className="h-96 w-screen lg:w-[450px] lg:pb-20 xl:w-[500px] 2xl:w-[700px]">

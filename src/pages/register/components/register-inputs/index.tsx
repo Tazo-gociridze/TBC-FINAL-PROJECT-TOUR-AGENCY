@@ -16,7 +16,7 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control }) => {
         name="username"
         control={control}
         rules={{ required: true }}
-          render={({ field }) => <Input {...field} placeholder={t('usernamePlaceholder')} />}
+        render={({ field }) => <Input {...field} placeholder={t('usernamePlaceholder')} />}
       />
       <Controller
         name="email"
@@ -28,22 +28,20 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control }) => {
         name="phone"
         control={control}
         rules={{ required: true }}
-          render={({ field }) => <Input type="tel" {...field} placeholder={t('phone-number')} />}
+        render={({ field }) => <Input type="tel" {...field} placeholder={t('phone-number')} />}
       />
       <Controller
         name="password"
         control={control}
         rules={{ required: true }}
-        render={({ field }) => (
-            <Input.Password {...field} placeholder={t('passwordPlaceholder')} />
-        )}
+        render={({ field }) => <Input.Password {...field} placeholder={t('passwordPlaceholder')} />}
       />
       <Controller
         name="repeatPassword"
         control={control}
         rules={{ required: true }}
         render={({ field }) => (
-            <Input.Password {...field} placeholder={t('repeatPasswordPlaceholder')} />
+          <Input.Password {...field} placeholder={t('repeatPasswordPlaceholder')} />
         )}
       />
     </div>

@@ -15,7 +15,7 @@ interface HeaderToolsProps {
 
 const HeaderTools: FC<HeaderToolsProps> = ({ isMenuActive, setIsMenuActive }) => {
   const { user, themeIcon, changeTheme, t } = useHeaderToolsLogic();
-  const {t:Tprofile} = useTranslation('profile')
+  const { t: Tprofile } = useTranslation('profile');
   return (
     <div className={ChangeLangAndThemeContainerStyles()}>
       <HeaderChangeLang />
