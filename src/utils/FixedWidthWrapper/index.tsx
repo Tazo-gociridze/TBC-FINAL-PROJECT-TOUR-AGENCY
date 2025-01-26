@@ -7,7 +7,7 @@ const FixedWidthWrapper: FC<PropsWithChildren<FixedWidthWrapperProps>> = ({
   ...props
 }) => {
   return (
-    <div {...props} className="m-auto flex w-[1650px] items-center justify-between">
+    <div {...props} className="m-auto flex w-[1650px]  items-center justify-between">
       {children}
     </div>
   );

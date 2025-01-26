@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { Spin } from 'antd';
 
 interface DelayedLoadingProps {
-  delay: number; 
-  children: React.ReactNode; 
+  delay: number;
+  children: React.ReactNode;
 }
 
 const DelayedLoading: React.FC<DelayedLoadingProps> = ({ delay, children }) => {
@@ -14,11 +14,11 @@ const DelayedLoading: React.FC<DelayedLoadingProps> = ({ delay, children }) => {
       setLoading(false);
     }, delay);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, [delay]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex min-h-screen items-center justify-center">
       {loading ? <Spin size="large" /> : children}
     </div>
   );

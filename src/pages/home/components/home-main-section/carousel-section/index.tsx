@@ -22,6 +22,7 @@ const HomeMainSectionCarousel = () => {
             },
           }}
         >
+          
           <Carousel arrows infinite={true} autoplay autoplaySpeed={3000} draggable>
             {data?.map((tour) => <CarouselItem key={tour.id} tour={tour} />)}
           </Carousel>

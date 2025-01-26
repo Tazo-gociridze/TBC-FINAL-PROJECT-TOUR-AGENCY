@@ -9,21 +9,14 @@ const useToursLogic = () => {
   const searchSort = searchParams.get('sort');
   const searchSearchTerm = searchParams.get('search') || '';
 
-  const [sort, setSort] = useState(searchSort || ''); 
+  const [sort, setSort] = useState(searchSort || '');
   const [searchTerm, setSearchTerm] = useState(searchSearchTerm);
 
-  const {
-    data,
-    refetch,
-    isLoading,
-    isError,
-    fetchNextPage,
-    hasNextPage, 
-  } = useInfiniteQuery({
+  const { data, refetch, isLoading, isError, fetchNextPage, hasNextPage } = useInfiniteQuery({
     queryKey: ['get-tours', { sort, searchTerm }],
-    queryFn: ({ pageParam = 0 }) => getTours(sort, searchTerm, pageParam), 
+    queryFn: ({ pageParam = 0 }) => getTours(sort, searchTerm, pageParam),
     initialPageParam: 0,
-    getNextPageParam: (lastPage) => lastPage.nextPage, 
+    getNextPageParam: (lastPage) => lastPage.nextPage,
     enabled: false,
   });
 
@@ -33,7 +26,10 @@ const useToursLogic = () => {
 
   const updateQueryParams = (newParams: Record<string, string>) => {
     const currentParams = Object.fromEntries(searchParams.entries());
-    const updatedParams = qs.stringify({ ...currentParams, ...newParams }, { addQueryPrefix: true });
+    const updatedParams = qs.stringify(
+      { ...currentParams, ...newParams },
+      { addQueryPrefix: true }
+    );
     window.history.pushState({}, '', updatedParams);
     setSearchParams(newParams);
   };
@@ -62,7 +58,6 @@ const useToursLogic = () => {
   const sortedData = data?.pages
     .flatMap((page) => page.data)
     .sort((a, b) => {
-
       if (sort === '' || sort === 'none') {
         return 0;
       }
@@ -86,7 +81,7 @@ const useToursLogic = () => {
     isLoading,
     isError,
     fetchNextPage,
-    hasNextPage, 
+    hasNextPage,
   };
 };
 

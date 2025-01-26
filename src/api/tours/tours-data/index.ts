@@ -44,7 +44,8 @@ export const getTours = async (
 
     console.log('Fetched data:', data);
 
-    const nextPage = data.length && count && pageParam + pageSize < count ? pageParam + pageSize : null;
+    const nextPage =
+      data.length && count && pageParam + pageSize < count ? pageParam + pageSize : null;
 
     return {
       data: data ? data : [],

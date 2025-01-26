@@ -1,31 +1,28 @@
-import { useTranslation } from "react-i18next";
-import { NavLink, useLocation } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const HeaderNav = () => {
-  const { t } = useTranslation("header");
+  const { t } = useTranslation('header');
   const { pathname } = useLocation();
 
   const isActiveLink = (to: string) => pathname === to;
 
   return (
-    <nav className="flex gap-x-10 text-[19px] text-white">
-      <NavLink
-        to="/"
-        className={isActiveLink("/") ? "text-blue-300" : "hover:text-blue-300"}
-      >
-        {t("navHome")}
+    <nav className="hidden gap-x-10 text-[19px] text-white sm:hidden lg:flex">
+      <NavLink to="/" className={isActiveLink('/') ? 'text-blue-300' : 'hover:text-blue-300'}>
+        {t('navHome')}
       </NavLink>
       <NavLink
         to="/tours"
-        className={isActiveLink("/tours") ? "text-blue-300" : "hover:text-blue-300"}
+        className={isActiveLink('/tours') ? 'text-blue-300' : 'hover:text-blue-300'}
       >
-        {t("navTours")}
+        {t('navTours')}
       </NavLink>
       <NavLink
         to="/services"
-        className={isActiveLink("/services") ? "text-blue-300" : "hover:text-blue-300"}
+        className={isActiveLink('/services') ? 'text-blue-300' : 'hover:text-blue-300'}
       >
-        {t("navServices")}
+        {t('navServices')}
       </NavLink>
     </nav>
   );

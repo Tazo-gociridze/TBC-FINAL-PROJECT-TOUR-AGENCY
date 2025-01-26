@@ -1,9 +1,7 @@
 import HomeMainSection from './views/home-main-section';
 
 const Home = () => {
-  return (
-      <HomeMainSection />
-  );
+  return <HomeMainSection />;
 };
 
 export default Home;

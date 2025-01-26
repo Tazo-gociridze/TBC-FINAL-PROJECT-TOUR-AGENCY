@@ -20,13 +20,13 @@ const ChangeLangWindow: FC<ChangeLangWindowProps> = ({
   return (
     <>
       {isSwitchLang && (
-        <div className="absolute top-12 rounded-md bg-[#000000] shadow-md">
+        <div className="absolute top-12 z-[9999] rounded-md bg-[#000000] shadow-md text-sm lg:text-[18px]">
           <div
             onClick={switchLangHandler}
-            className="flex cursor-pointer items-center gap-x-1 rounded-md bg-[#252525] px-3 py-2"
+            className="flex cursor-pointer items-center gap-x-1 rounded-md bg-[#0f2708] px-3 py-2"
           >
             <span>{NOT_SELECTED_LANG}</span>
-            <img className="h-4 w-4" src={NOT_SELECTED_LANG_SRC} alt={NOT_SELECTED_LANG_ALT} />
+            <img className="h-3 w-3 lg:h-4 lg:w-4" src={NOT_SELECTED_LANG_SRC} alt={NOT_SELECTED_LANG_ALT} />
           </div>
         </div>
       )}

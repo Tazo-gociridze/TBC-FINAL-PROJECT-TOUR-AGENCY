@@ -1,0 +1,11 @@
+{
+    "tours-title": "Discover our exclusive tours",
+    "tours-search-placeholder": "Search for a tour...",
+    "no-tours-available": "No tours available",
+    "tour-view-more": "View More",
+    "tour-error-message": "Error loading tours. Please try again later.",
+    
+    "non-selected": "Non selected",
+    "sort-by-price": "Sort by Price",
+    "sort-by-date": "Sort by Date"
+}

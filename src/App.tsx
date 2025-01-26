@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { Spin } from 'antd';
+import DelayedLoading from './utils/DelayedLoading';
 
 const Home = lazy(() => import('./pages/home'));
 const MainLayout = lazy(() => import('./Layouts/main-layout/Layout'));
@@ -26,7 +27,7 @@ function App() {
                 </AuthGuard>
               }
             />
-            <Route path="/tours/:tourId" element={<TourDetails />} />
+            <Route path="/tours/:tourId" element={<DelayedLoading delay={300}><TourDetails /></DelayedLoading>} />
             <Route path="register" element={<Register />} />
           </Route>
         </Routes>
