@@ -1,51 +1,81 @@
 import { RegistrationForm } from '@/api/auth/auth.types';
 import { FC } from 'react';
-import { Control, Controller } from 'react-hook-form';
+import { Control, Controller, FieldErrors } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'antd';
 
 interface RegisterInputsProps {
   control: Control<RegistrationForm>;
+  errors: FieldErrors<RegistrationForm>;
 }
 
-const RegisterInputs: FC<RegisterInputsProps> = ({ control }) => {
+const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
   const { t } = useTranslation('registration');
+
   return (
-    <div className="flex flex-col gap-y-5 *:rounded-md *:px-3 *:py-3">
-      <Controller
-        name="username"
-        control={control}
-        rules={{ required: true }}
-        render={({ field }) => <Input {...field} placeholder={t('usernamePlaceholder')} />}
-      />
-      <Controller
-        name="email"
-        control={control}
-        rules={{ required: true }}
-        render={({ field }) => <Input {...field} placeholder={t('emailPlaceholder')} />}
-      />
-      <Controller
-        name="phone"
-        control={control}
-        rules={{ required: true }}
-        render={({ field }) => <Input type="tel" {...field} placeholder={t('phone-number')} />}
-      />
-      <Controller
-        name="password"
-        control={control}
-        rules={{ required: true }}
-        render={({ field }) => <Input.Password {...field} placeholder={t('passwordPlaceholder')} />}
-      />
-      <Controller
-        name="repeatPassword"
-        control={control}
-        rules={{ required: true }}
-        render={({ field }) => (
-          <Input.Password {...field} placeholder={t('repeatPasswordPlaceholder')} />
-        )}
-      />
+    <div className="flex flex-col *:rounded-md *:px-3 *:py-3">
+        <Controller
+            name="username"
+            control={control}
+            render={({ field }) => (
+                <>
+                    <Input className='mt-5' {...field} placeholder={t('usernamePlaceholder')} />
+                    {errors.username && (
+                        <p style={{ color: 'red', fontSize: '12px' }}>{t(`${errors.username.message}`)}</p>
+                    )}
+                </>
+            )}
+        />
+        <Controller
+            name="email"
+            control={control}
+            render={({ field }) => (
+                <>
+                    <Input className='mt-5' {...field} placeholder={t('emailPlaceholder')} />
+                    {errors.email && (
+                        <p style={{ color: 'red', fontSize: '12px' }}>{t(`${errors.email.message}`)}</p>
+                    )}
+                </>
+            )}
+        />
+        <Controller
+            name="phone"
+            control={control}
+            render={({ field }) => (
+                <>
+                    <Input className='mt-5' type="tel" {...field} placeholder={t('phone-number')} />
+                    {errors.phone && (
+                        <p style={{ color: 'red', fontSize: '12px' }}>{t(`${errors.phone.message}`)}</p>
+                    )}
+                </>
+            )}
+        />
+        <Controller
+            name="password"
+            control={control}
+            render={({ field }) => (
+                <>
+                    <Input.Password className='mt-5' {...field} placeholder={t('passwordPlaceholder')} />
+                    {errors.password && (
+                        <p style={{ color: 'red', fontSize: '12px' }}>{t(`${errors.password.message}`)}</p>
+                    )}
+                </>
+            )}
+        />
+        <Controller
+            name="repeatPassword"
+            control={control}
+            render={({ field }) => (
+                <>
+                    <Input.Password className='mt-5' {...field} placeholder={t('repeatPasswordPlaceholder')} />
+                    {errors.repeatPassword && (
+                        <p style={{ color: 'red', fontSize: '12px' }}>{t(`${errors.repeatPassword.message}`)}</p>
+                    )}
+                </>
+            )}
+        />
     </div>
-  );
+);
 };
 
 export default RegisterInputs;

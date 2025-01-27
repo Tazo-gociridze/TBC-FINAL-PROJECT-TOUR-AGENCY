@@ -1,0 +1,9 @@
+{
+    "Username must be at least 3 characters": "Username must be at least 3 characters",
+    "Username must be at most 20 characters": "Username must be at most 20 characters",
+    "Invalid email address": "Invalid email address",
+    "Invalid phone number": "Invalid phone number",
+     "Phone number must be at least 10 characters": "Phone number must be at least 10 characters",
+    "Password must be at least 6 characters": "Password must be at least 6 characters",
+    "Passwords do not match": "Passwords do not match"
+}

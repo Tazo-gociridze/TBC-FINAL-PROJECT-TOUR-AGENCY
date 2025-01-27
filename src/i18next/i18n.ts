@@ -16,7 +16,7 @@ i18n
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
-    ns: ['header', 'login', 'registration', 'home', 'tours', 'profile', 'footer'],
+    ns: ['header', 'login', 'registration', 'home', 'tours', 'profile', 'footer', 'zodRegistration', 'zodLogin'],
     defaultNS: 'header',
     detection: {
       order: ['localStorage', 'navigator'],

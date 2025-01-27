@@ -5,7 +5,7 @@ import RegisterFooter from './components/register-footer';
 import useRegisterLogic from './hook/useRegisterLogic';
 
 const Register = () => {
-  const { control, handleSubmit, isPending, error, email, onSubmit, getEmailServiceLink } =
+  const { control, handleSubmit, isPending, error, email, onSubmit, getEmailServiceLink, errors } =
     useRegisterLogic();
 
   return (
@@ -21,7 +21,7 @@ const Register = () => {
             action=""
             autoComplete="chrome-off"
           >
-            <RegisterInputs control={control} />
+            <RegisterInputs control={control} errors={errors}/>
             <RegisterFooter />
           </form>
         </>
