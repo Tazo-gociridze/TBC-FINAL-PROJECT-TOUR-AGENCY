@@ -1,36 +1,32 @@
 import { RegistrationForm } from '@/api/auth/auth.types';
 import { register } from '@/api/auth/register';
-import {
-  UseMutationResult,
-  useMutation,
-} from '@tanstack/react-query';
+import { UseMutationResult, useMutation } from '@tanstack/react-query';
 import { AUTH_MUTATION_KEY } from './enum';
-import { RegisterErrorResponse, RegisterResult, RegisterSuccessResponse, UseRegisterMutationArgs } from './types';
-
+import { RegisterErrorResponse, RegisterResult, UseRegisterMutationArgs } from './types';
+import { AuthData } from '@/utils/userType';
 
 const useRegisterMutation = ({
   mutationOptions = {},
 }: UseRegisterMutationArgs): UseMutationResult<
-  RegisterSuccessResponse,
+  AuthData,
   RegisterErrorResponse,
   RegistrationForm
 > => {
   const mutationFn = async (
     registrationValues: RegistrationForm
-  ): Promise<RegisterSuccessResponse> => {
+  ): Promise<AuthData> => {
     const result: RegisterResult = await register(registrationValues);
 
-
     if (!result.user) {
-      throw new Error("User not created");
+      throw new Error('User not created');
     }
 
     return {
-      message: 'User registered successfully',
-      id: result.user.id,
-    };
+      user: result.user,
+      session: result.session,
+    } as AuthData;
   };
-  return useMutation<RegisterSuccessResponse, RegisterErrorResponse, RegistrationForm>({
+  return useMutation<AuthData, RegisterErrorResponse, RegistrationForm>({
     mutationKey: [AUTH_MUTATION_KEY.REGISTER],
     mutationFn: mutationFn,
     ...mutationOptions,

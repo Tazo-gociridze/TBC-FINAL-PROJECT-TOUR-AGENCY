@@ -11,7 +11,7 @@ const useHeaderToolsLogic = () => {
   const { t } = useTranslation('header');
 
   const { mutate } = useLogoutMutation({
-    mutationOption: {
+    mutationOptions: {
       onSuccess: () => {
         setUser(null);
         navigate('/login');

@@ -31,6 +31,7 @@ const useLoginLogic = () => {
   const { mutate } = useLoginMutation({
     mutationOptions: {
       onSuccess: (user: UserProfile) => {
+        console.log(user)
         navigate(`/`);
         setUser(user);
       },

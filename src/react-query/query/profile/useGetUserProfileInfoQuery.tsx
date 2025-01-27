@@ -1,13 +1,8 @@
 import { fetchUserProfile } from '@/api/profile/edit';
 import { useAuth } from '@/store/auth';
-import {
-  UseQueryResult,
-  useQuery,
-  QueryFunction,
-} from '@tanstack/react-query';
+import { UseQueryResult, useQuery, QueryFunction } from '@tanstack/react-query';
 import { PROFILE_QUERY_KEY } from './enum';
 import { UseGetUserProfileInfoQueryOptions, UserProfile, UserProfileError } from './types';
-
 
 const useGetUserProfileInfoQuery = ({
   queryOptions = {},

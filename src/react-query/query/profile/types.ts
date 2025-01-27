@@ -1,4 +1,4 @@
-import { UseQueryOptions } from "@tanstack/react-query";
+import { UseQueryOptions } from '@tanstack/react-query';
 
 export interface UserProfile {
   id: string;

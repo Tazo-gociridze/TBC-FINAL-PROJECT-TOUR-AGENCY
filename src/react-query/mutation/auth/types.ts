@@ -1,7 +1,7 @@
-import { UseMutationOptions } from "@tanstack/react-query";
-import { Session } from '@supabase/supabase-js'
-import { RegistrationForm } from "@/api/auth/auth.types";
-
+import { UseMutationOptions } from '@tanstack/react-query';
+import { Session } from '@supabase/supabase-js';
+import { RegistrationForm } from '@/api/auth/auth.types';
+import { AuthData } from '@/utils/userType';
 
 // LOGIN //////////////
 export interface LoginCredentials {
@@ -10,20 +10,17 @@ export interface LoginCredentials {
 }
 
 export interface LoginSuccessResponse {
-  id: string;
-  userId: string;
-  username: string;
+  id: string | undefined;
+  userId: string | undefined;
+  username: string | undefined;
   email: string | undefined;
-  phone: string;
+  phone: string | undefined;
 }
 
 export interface LoginErrorResponse {
   message: string;
   statusCode: number;
 }
-
-
-
 
 // LOGOUT ////////////////
 export interface LogoutSuccessResponse {
@@ -44,14 +41,8 @@ export interface UseLogoutMutationArgs {
   >;
 }
 
-
 // REGISTER ////////////////
 
-
-export interface RegisterSuccessResponse {
-  message: string;
-  id: string;
-}
 
 export interface RegisterErrorResponse {
   message: string;
@@ -63,15 +54,13 @@ export interface RegisterResult {
   session: Session | null;
 }
 
-
 export interface User {
-    id: string;
+  id: string;
 }
-
 
 export interface UseRegisterMutationArgs {
   mutationOptions?: Omit<
-    UseMutationOptions<RegisterSuccessResponse, RegisterErrorResponse, RegistrationForm>,
+    UseMutationOptions<AuthData, RegisterErrorResponse, RegistrationForm>,
     'mutationKey'
   >;
 }

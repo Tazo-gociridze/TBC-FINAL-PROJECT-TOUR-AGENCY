@@ -1,10 +1,12 @@
 import { UpdateUserProfileData, fetchUpdateProfile } from '@/api/profile/edit';
-import {
-  UseMutationResult,
-  useMutation,
-} from '@tanstack/react-query';
+import { UseMutationResult, useMutation } from '@tanstack/react-query';
 import { PROFILE_MUTATION_KEY } from './enum';
-import { UpdateProfileData, UpdateProfileErrorResponse, UpdateProfileSuccessResponse, UseEditProfileMutationArgs } from './types';
+import {
+  UpdateProfileData,
+  UpdateProfileErrorResponse,
+  UpdateProfileSuccessResponse,
+  UseEditProfileMutationArgs,
+} from './types';
 
 const useEditProfileMutation = ({
   mutationOptions = {},
@@ -15,7 +17,7 @@ const useEditProfileMutation = ({
 > => {
   const mutationFn = async (updateProfileData: UpdateProfileData) => {
     const { id } = updateProfileData;
-    const updateData : UpdateUserProfileData = { id };
+    const updateData: UpdateUserProfileData = { id };
 
     await fetchUpdateProfile(updateData);
     return {
@@ -23,11 +25,7 @@ const useEditProfileMutation = ({
       updatedAt: new Date().toISOString(),
     };
   };
-  return useMutation<
-    UpdateProfileSuccessResponse,
-    UpdateProfileErrorResponse,
-    UpdateProfileData
-  >({
+  return useMutation<UpdateProfileSuccessResponse, UpdateProfileErrorResponse, UpdateProfileData>({
     mutationKey: [PROFILE_MUTATION_KEY.EDIT_PROFILE],
     mutationFn: mutationFn,
     ...mutationOptions,

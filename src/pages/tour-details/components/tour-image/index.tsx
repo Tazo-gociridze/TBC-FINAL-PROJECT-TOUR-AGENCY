@@ -1,7 +1,7 @@
 import { Image } from 'antd';
 import { FC } from 'react';
 
-const DetailsImage: FC<{ image_url: string | undefined}> = ({ image_url }) => {
+const DetailsImage: FC<{ image_url: string | undefined }> = ({ image_url }) => {
   return (
     <div className="h-80 w-full md:h-80 lg:h-full">
       <Image

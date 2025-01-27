@@ -14,7 +14,6 @@ export interface UseGetLatestToursQueryOptions {
 
 // SPECIFIC TOUR ////////////
 
-
 export interface ToursError {
   message: string;
   statusCode: number;

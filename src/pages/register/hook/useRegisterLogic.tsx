@@ -4,7 +4,8 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslation } from 'react-i18next';
-import { useRegisterMutation } from '@/react-query/mutation/auth/useRegisterMutation';
+import useRegisterMutation from '@/react-query/mutation/auth/useRegisterMutation';
+import { AuthData } from '@/utils/userType';
 
 const useRegisterLogic = () => {
   const { t } = useTranslation('zodRegistration');
@@ -44,17 +45,18 @@ const useRegisterLogic = () => {
     resolver: zodResolver(registerSchema),
   });
 
-  const { mutate, isPending, error } = useRegisterMutation({});
+  const { mutate, isPending, error } = useRegisterMutation({mutationOptions: {
+    onSuccess: (data: AuthData) => {
+      console.log(data)
+      setEmail(data.user?.email || null);
+    },
+  }});
 
   const [email, setEmail] = useState<string | null>(null);
 
   const onSubmit = async (registrationValues: RegistrationForm) => {
     try {
-      await mutate(registrationValues, {
-        onSuccess: (data) => {
-          setEmail(data.user?.email || null);
-        },
-      });
+      await mutate(registrationValues);
     } catch (e) {
       console.error('Error on register', e);
     }

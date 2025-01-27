@@ -1,16 +1,12 @@
 import { fetchSpecificTour } from '@/api/tours/specific-tour';
-import {
-  UseQueryResult,
-  useQuery,
-  QueryFunction,
-} from '@tanstack/react-query';
+import { UseQueryResult, useQuery, QueryFunction } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { TOURS_QUERY_KEY } from './enum';
 import { ToursError, UseGetSpecificTourQueryOptions } from './types';
 import { TourData } from '@/api/tours/tours-data';
 
 const useGetSpecificTourQuery = ({
-    queryOptions = {}
+  queryOptions = {},
 }: UseGetSpecificTourQueryOptions): UseQueryResult<TourData, ToursError> => {
   const { tourId } = useParams();
 
@@ -22,12 +18,12 @@ const useGetSpecificTourQuery = ({
       }
       const tour = await fetchSpecificTour(tourId as string);
       if (!tour) {
-        throw new Error('Tour not found')
+        throw new Error('Tour not found');
       }
-      return tour
+      return tour;
     }) as QueryFunction<TourData, readonly unknown[], never>,
     enabled: !!tourId,
-      ...queryOptions
+    ...queryOptions,
   });
 };
 
