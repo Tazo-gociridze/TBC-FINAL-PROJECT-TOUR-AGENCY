@@ -12,7 +12,7 @@ interface LoginInputsProps {
 
 const LoginInputs: FC<LoginInputsProps> = ({ control, errors }) => {
   const { t } = useTranslation('zodLogin');
-  const {t:LoginT} = useTranslation('login')
+  const { t: LoginT } = useTranslation('login');
   return (
     <div className="flex flex-col *:rounded-md *:px-3 *:py-3">
       <Controller
@@ -33,7 +33,11 @@ const LoginInputs: FC<LoginInputsProps> = ({ control, errors }) => {
         control={control}
         render={({ field }) => (
           <>
-            <Input.Password className="mt-5" {...field} placeholder={LoginT('passwordPlaceholder')} />
+            <Input.Password
+              className="mt-5"
+              {...field}
+              placeholder={LoginT('passwordPlaceholder')}
+            />
             {errors.password?.message && (
               <p style={{ color: 'red', fontSize: '12px' }}>{t(errors.password.message)}</p>
             )}

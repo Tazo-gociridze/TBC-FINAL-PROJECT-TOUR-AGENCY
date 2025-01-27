@@ -15,7 +15,7 @@ const useProfileLogic = () => {
 
   const { t } = useTranslation('profile');
 
-  const { data, refetch } = useGetUserProfileInfoQuery();
+  const { data, refetch } = useGetUserProfileInfoQuery({});
 
   const { control, handleSubmit, reset } = useForm<ProfileFormValues>({
     defaultValues: {

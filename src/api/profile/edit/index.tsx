@@ -1,9 +1,9 @@
 import { supabase } from '@/utils/supabaseClient';
 
-interface UpdateUserProfileData {
-  id: string;
-  username: string;
-  phone: string;
+export interface UpdateUserProfileData {
+  id?: string;
+  username?: string;
+  phone?: string;
 }
 
 interface UserProfile {

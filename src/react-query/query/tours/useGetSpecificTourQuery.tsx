@@ -1,22 +1,34 @@
 import { fetchSpecificTour } from '@/api/tours/specific-tour';
-import { useQuery } from '@tanstack/react-query';
+import {
+  UseQueryResult,
+  useQuery,
+  QueryFunction,
+} from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { TOURS_QUERY_KEY } from './enum';
+import { ToursError, UseGetSpecificTourQueryOptions } from './types';
+import { TourData } from '@/api/tours/tours-data';
 
-const useGetSpecificTourQuery = () => {
+const useGetSpecificTourQuery = ({
+    queryOptions = {}
+}: UseGetSpecificTourQueryOptions): UseQueryResult<TourData, ToursError> => {
   const { tourId } = useParams();
 
-  const { data, isLoading, isError } = useQuery({
+  return useQuery<TourData, ToursError>({
     queryKey: [TOURS_QUERY_KEY.SPECIFIC_TOUR, tourId],
-    queryFn: () => fetchSpecificTour(tourId as string),
+    queryFn: (async (): Promise<TourData> => {
+      if (!tourId) {
+        throw new Error('Tour ID is missing');
+      }
+      const tour = await fetchSpecificTour(tourId as string);
+      if (!tour) {
+        throw new Error('Tour not found')
+      }
+      return tour
+    }) as QueryFunction<TourData, readonly unknown[], never>,
     enabled: !!tourId,
+      ...queryOptions
   });
-
-  return {
-    data,
-    isLoading,
-    isError,
-  };
 };
 
 export default useGetSpecificTourQuery;

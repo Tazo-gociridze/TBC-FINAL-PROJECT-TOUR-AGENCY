@@ -11,7 +11,7 @@ interface RegisterInputsProps {
 
 const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
   const { t } = useTranslation('zodRegistration');
-  const {t:RegT} = useTranslation('registration')
+  const { t: RegT } = useTranslation('registration');
 
   return (
     <div className="flex flex-col *:rounded-md *:px-3 *:py-3">

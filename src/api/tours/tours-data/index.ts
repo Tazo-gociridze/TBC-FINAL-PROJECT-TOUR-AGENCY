@@ -7,7 +7,7 @@ export interface TourData {
   price: number;
   start_date: Date;
   end_date: Date;
-  image_url?: string;
+  image_url?: string | undefined;
   created_at: string;
 }
 

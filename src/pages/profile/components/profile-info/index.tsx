@@ -1,11 +1,11 @@
-import { UserProfile } from '@/api/auth/auth.types';
+import { UserProfile } from '@/react-query/query/profile/types';
 import { Spin, Typography } from 'antd';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 const { Paragraph } = Typography;
 
 interface ProfileInfoProps {
-  data: UserProfile | null | undefined;
+  data: UserProfile;
 }
 
 const ProfileInfo: FC<ProfileInfoProps> = ({ data }) => {

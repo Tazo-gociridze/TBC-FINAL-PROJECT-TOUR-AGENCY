@@ -40,7 +40,7 @@ const Profile: FC = () => {
             onFinish={onFinish}
           />
         ) : (
-          <ProfileInfo data={data} />
+          <>{data ? <ProfileInfo data={data} /> : null}</>
         )}
 
         <ProfileButtons

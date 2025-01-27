@@ -4,7 +4,7 @@ import CarouselItem from './components/carousel-item';
 import useGetLatestToursQuery from '@/react-query/query/tours/useGetLatestToursQuery';
 
 const HomeMainSectionCarousel = () => {
-  const { data, isPending } = useGetLatestToursQuery();
+  const { data, isPending } = useGetLatestToursQuery({});
 
   const parentStyles = `absolute right-7 top-7 z-0 ${!isPending ? 'h-[500px]' : 'h-0'}
    w-full bg-[var(--main-color)] opacity-80 dark:opacity-60`;
