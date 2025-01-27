@@ -11,6 +11,7 @@ interface RegisterInputsProps {
 
 const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
   const { t } = useTranslation('zodRegistration');
+  const {t:RegT} = useTranslation('registration')
 
   return (
     <div className="flex flex-col *:rounded-md *:px-3 *:py-3">
@@ -19,7 +20,7 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
         control={control}
         render={({ field }) => (
           <>
-            <Input className="mt-5" {...field} placeholder={t('usernamePlaceholder')} />
+            <Input className="mt-5" {...field} placeholder={RegT('usernamePlaceholder')} />
             {errors.username?.message && (
               <p style={{ color: 'red', fontSize: '12px' }}>{t(errors.username.message)}</p>
             )}
@@ -31,7 +32,7 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
         control={control}
         render={({ field }) => (
           <>
-            <Input className="mt-5" {...field} placeholder={t('emailPlaceholder')} />
+            <Input className="mt-5" {...field} placeholder={RegT('emailPlaceholder')} />
             {errors.email?.message && (
               <p style={{ color: 'red', fontSize: '12px' }}>{t(errors.email.message)}</p>
             )}
@@ -43,7 +44,7 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
         control={control}
         render={({ field }) => (
           <>
-            <Input className="mt-5" type="tel" {...field} placeholder={t('phone-number')} />
+            <Input className="mt-5" type="tel" {...field} placeholder={RegT('phone-number')} />
             {errors.phone?.message && (
               <p style={{ color: 'red', fontSize: '12px' }}>{t(errors.phone.message)}</p>
             )}
@@ -55,7 +56,7 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
         control={control}
         render={({ field }) => (
           <>
-            <Input.Password className="mt-5" {...field} placeholder={t('passwordPlaceholder')} />
+            <Input.Password className="mt-5" {...field} placeholder={RegT('passwordPlaceholder')} />
             {errors.password?.message && (
               <p style={{ color: 'red', fontSize: '12px' }}>{t(errors.password.message)}</p>
             )}
@@ -70,7 +71,7 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
             <Input.Password
               className="mt-5"
               {...field}
-              placeholder={t('repeatPasswordPlaceholder')}
+              placeholder={RegT('repeatPasswordPlaceholder')}
             />
             {errors.repeatPassword?.message && (
               <p style={{ color: 'red', fontSize: '12px' }}>{t(errors.repeatPassword.message)}</p>
