@@ -1,19 +1,19 @@
-import { fetchSpecificTour } from '@/api/tours/specific-tour';
-import { useQuery } from '@tanstack/react-query';
-import { useParams } from 'react-router-dom';
 import { Spin, Alert } from 'antd';
 import DetailsImage from './components/tour-image';
 import TourInfo from './views/tour-info';
 import TourGoBack from './components/tour-go-back';
+import useGetSpecificTourQuery from '@/react-query/query/tours/useGetSpecificTourQuery';
+
+
 
 const TourDetails = () => {
-  const { tourId } = useParams();
+  
+const {
+  data,
+  isLoading,
+  isError,
+} = useGetSpecificTourQuery()
 
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ['fetch-specific-tour', tourId],
-    queryFn: () => fetchSpecificTour(tourId as string),
-    enabled: !!tourId,
-  });
 
   if (isLoading) {
     return (

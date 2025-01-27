@@ -1,24 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useInfiniteQuery } from '@tanstack/react-query';
-import { getTours } from '@/api/tours/tours-data';
 import qs from 'qs';
+import { useGetToursQuery } from '@/react-query/query/tours/useGetToursQuery';
 
 const useToursLogic = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchSort = searchParams.get('sort');
-  const searchSearchTerm = searchParams.get('search') || '';
 
-  const [sort, setSort] = useState(searchSort || '');
-  const [searchTerm, setSearchTerm] = useState(searchSearchTerm);
-
-  const { data, refetch, isLoading, isError, fetchNextPage, hasNextPage } = useInfiniteQuery({
-    queryKey: ['get-tours', { sort, searchTerm }],
-    queryFn: ({ pageParam = 0 }) => getTours(sort, searchTerm, pageParam),
-    initialPageParam: 0,
-    getNextPageParam: (lastPage) => lastPage.nextPage,
-    enabled: false,
-  });
+  const {
+    data,
+    refetch,
+    isLoading,
+    isError,
+    fetchNextPage,
+    hasNextPage,
+    setSort,
+    setSearchTerm,
+    searchTerm,
+    sort,
+  } = useGetToursQuery();
 
   useEffect(() => {
     refetch();
@@ -53,7 +53,7 @@ const useToursLogic = () => {
     if (!searchSort) {
       setSort('');
     }
-  }, [searchSort]);
+  }, [searchSort, setSort]);
 
   const sortedData = data?.pages
     .flatMap((page) => page.data)

@@ -1,6 +1,6 @@
 import { supabase } from '@/utils/supabaseClient';
 import { RegistrationForm } from '../auth.types';
-import { useMutation } from '@tanstack/react-query';
+
 
 export const register = async (registrationValues: RegistrationForm) => {
   console.log(registrationValues);
@@ -42,9 +42,3 @@ export const register = async (registrationValues: RegistrationForm) => {
   }
 };
 
-export const useRegister = () => {
-  return useMutation({
-    mutationKey: ['register'],
-    mutationFn: (registrationValues: RegistrationForm) => register(registrationValues),
-  });
-};

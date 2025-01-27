@@ -1,10 +1,10 @@
 import { RegistrationForm } from '@/api/auth/auth.types';
-import { useRegister } from '@/api/auth/register';
 import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslation } from 'react-i18next';
+import { useRegisterMutation } from '@/react-query/mutation/auth/useRegisterMutation';
 
 const useRegisterLogic = () => {
   const { t } = useTranslation('zodRegistration');
@@ -44,7 +44,10 @@ const useRegisterLogic = () => {
     resolver: zodResolver(registerSchema),
   });
 
-  const { mutate, isPending, error } = useRegister();
+  const { mutate, isPending, error } = useRegisterMutation({
+
+  });
+  
   const [email, setEmail] = useState<string | null>(null);
 
   const onSubmit = async (registrationValues: RegistrationForm) => {

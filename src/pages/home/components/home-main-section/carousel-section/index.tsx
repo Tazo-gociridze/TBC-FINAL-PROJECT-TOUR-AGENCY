@@ -1,10 +1,11 @@
 import { Carousel, ConfigProvider } from 'antd';
 import CarouselItem from './components/carousel-item';
-import { useQuery } from '@tanstack/react-query';
-import { fetchLatestTours } from '@/api/tours/latest-tours';
+
+import useGetLatestToursQuery from '@/react-query/query/tours/useGetLatestToursQuery';
 
 const HomeMainSectionCarousel = () => {
-  const { data, isPending } = useQuery({ queryKey: ['latest-tours'], queryFn: fetchLatestTours });
+  
+const {data, isPending} = useGetLatestToursQuery()
 
   const parentStyles = `absolute right-7 top-7 z-0 ${!isPending ? 'h-[500px]' : 'h-0'}
    w-full bg-[var(--main-color)] opacity-80 dark:opacity-60`;

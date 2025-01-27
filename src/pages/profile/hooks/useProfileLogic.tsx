@@ -1,12 +1,12 @@
-import { fetchUpdateProfile, fetchUserProfile } from '@/api/profile/edit';
 import useHeaderToolsLogic from '@/components/header/hooks/header-tools-logic';
 import { useAuth } from '@/store/auth';
-import { useMutation, useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { ProfileFormValues } from '..';
 import { useForm } from 'react-hook-form';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
+import useGetUserProfileInfoQuery from '@/react-query/query/tours/useGetUserProfileInfoQuery';
+import useEditProfileMutation from '@/react-query/mutation/profile/useEditProfileMutation';
 
 const useProfileLogic = () => {
   const { handleLogout } = useHeaderToolsLogic();
@@ -15,13 +15,7 @@ const useProfileLogic = () => {
 
   const { t } = useTranslation('profile');
 
-  const { data, refetch } = useQuery({
-    queryKey: ['userProfile', user?.id],
-    queryFn: () => {
-      return fetchUserProfile(user?.id as string);
-    },
-    enabled: !!user?.id,
-  });
+  const { data, refetch } = useGetUserProfileInfoQuery();
 
   const { control, handleSubmit, reset } = useForm<ProfileFormValues>({
     defaultValues: {
@@ -30,11 +24,11 @@ const useProfileLogic = () => {
     },
   });
 
-  const { mutate } = useMutation({
-    mutationKey: ['edit-profile'],
-    mutationFn: fetchUpdateProfile,
-    onSuccess: () => {
-      refetch();
+  const { mutate } = useEditProfileMutation({
+    mutationOptions: {
+      onSuccess: () => {
+        refetch();
+      },
     },
   });
 

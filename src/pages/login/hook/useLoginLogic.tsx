@@ -1,8 +1,8 @@
-import { LoginForm } from '@/api/auth/auth.types';
-import { login } from '@/api/auth/login';
+import { LoginForm, UserProfile } from '@/api/auth/auth.types';
+
+import useLoginMutation from '@/react-query/mutation/auth/useLoginMutation';
 import { useAuth } from '@/store/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useMutation } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
@@ -28,14 +28,12 @@ const useLoginLogic = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const { mutate } = useMutation({
-    mutationKey: ['login'],
-    mutationFn: login,
-    onSuccess: (user) => {
+  const { mutate } = useLoginMutation({mutationOptions:{
+    onSuccess: (user: UserProfile) => {
       navigate(`/`);
       setUser(user);
     },
-  });
+  }});
 
   const onSubmit = (loginValues: LoginForm) => {
     mutate(loginValues);
