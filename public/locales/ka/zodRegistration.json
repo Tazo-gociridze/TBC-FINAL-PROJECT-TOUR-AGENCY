@@ -1,9 +1,9 @@
 {
-    "Username must be at least 3 characters": "მომხმარებლის სახელი უნდა შეიცავდეს მინიმუმ 3 სიმბოლოს",
-    "Username must be at most 20 characters": "მომხმარებლის სახელი უნდა შეიცავდეს მაქსიმუმ 20 სიმბოლოს",
-    "Invalid email address": "არასწორი ელექტრონული ფოსტის მისამართი",
-    "Invalid phone number": "არასწორი ტელეფონის ნომერი",
-    "Phone number must be at least 10 characters": "ტელეფონის ნომერი უნდა შეიცავდეს მინიმუმ 10 სიმბოლოს",
-    "Password must be at least 6 characters": "პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს",
-    "Passwords do not match": "პაროლები არ ემთხვევა"
-  }
+  "Username must be at least 3 characters": "მომხმარებლის სახელი უნდა შეიცავდეს მინიმუმ 3 სიმბოლოს",
+  "Username must be at most 20 characters": "მომხმარებლის სახელი უნდა შეიცავდეს მაქსიმუმ 20 სიმბოლოს",
+  "Invalid email address": "არასწორი ელექტრონული ფოსტის მისამართი",
+  "Invalid phone number": "არასწორი ტელეფონის ნომერი",
+  "Phone number must be at least 10 characters": "ტელეფონის ნომერი უნდა შეიცავდეს მინიმუმ 10 სიმბოლოს",
+  "Password must be at least 6 characters": "პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს",
+  "Passwords do not match": "პაროლები არ ემთხვევა"
+}

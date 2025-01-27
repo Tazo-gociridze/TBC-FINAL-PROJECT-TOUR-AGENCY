@@ -21,7 +21,7 @@ const Register = () => {
             action=""
             autoComplete="chrome-off"
           >
-            <RegisterInputs control={control} errors={errors}/>
+            <RegisterInputs control={control} errors={errors} />
             <RegisterFooter />
           </form>
         </>
