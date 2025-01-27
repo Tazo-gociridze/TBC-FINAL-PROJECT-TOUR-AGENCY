@@ -2,6 +2,7 @@ import { getTours } from '@/api/tours/tours-data';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { TOURS_QUERY_KEY } from './enum';
 
 export const useGetToursQuery = () => {
   const [searchParams] = useSearchParams();
@@ -12,7 +13,7 @@ export const useGetToursQuery = () => {
   const [searchTerm, setSearchTerm] = useState(searchSearchTerm);
 
   const { data, refetch, isLoading, isError, fetchNextPage, hasNextPage } = useInfiniteQuery({
-    queryKey: ['get-tours', { sort, searchTerm }],
+    queryKey: [TOURS_QUERY_KEY.GET_TOURS, { sort, searchTerm }],
     queryFn: ({ pageParam = 0 }) => getTours(sort, searchTerm, pageParam),
     initialPageParam: 0,
     getNextPageParam: (lastPage) => lastPage.nextPage,
@@ -29,7 +30,7 @@ export const useGetToursQuery = () => {
     setSort,
     setSearchTerm,
     searchTerm,
-    sort
+    sort,
   };
 };
 

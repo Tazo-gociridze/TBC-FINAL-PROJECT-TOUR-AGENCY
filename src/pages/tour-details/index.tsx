@@ -4,16 +4,8 @@ import TourInfo from './views/tour-info';
 import TourGoBack from './components/tour-go-back';
 import useGetSpecificTourQuery from '@/react-query/query/tours/useGetSpecificTourQuery';
 
-
-
 const TourDetails = () => {
-  
-const {
-  data,
-  isLoading,
-  isError,
-} = useGetSpecificTourQuery()
-
+  const { data, isLoading, isError } = useGetSpecificTourQuery();
 
   if (isLoading) {
     return (

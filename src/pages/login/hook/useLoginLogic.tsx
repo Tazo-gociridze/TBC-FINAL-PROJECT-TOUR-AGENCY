@@ -28,12 +28,14 @@ const useLoginLogic = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const { mutate } = useLoginMutation({mutationOptions:{
-    onSuccess: (user: UserProfile) => {
-      navigate(`/`);
-      setUser(user);
+  const { mutate } = useLoginMutation({
+    mutationOptions: {
+      onSuccess: (user: UserProfile) => {
+        navigate(`/`);
+        setUser(user);
+      },
     },
-  }});
+  });
 
   const onSubmit = (loginValues: LoginForm) => {
     mutate(loginValues);

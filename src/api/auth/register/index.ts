@@ -1,7 +1,6 @@
 import { supabase } from '@/utils/supabaseClient';
 import { RegistrationForm } from '../auth.types';
 
-
 export const register = async (registrationValues: RegistrationForm) => {
   console.log(registrationValues);
   try {
@@ -41,4 +40,3 @@ export const register = async (registrationValues: RegistrationForm) => {
     throw err;
   }
 };
-

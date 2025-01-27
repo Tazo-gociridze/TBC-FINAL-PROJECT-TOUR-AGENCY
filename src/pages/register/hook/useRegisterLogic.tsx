@@ -44,10 +44,8 @@ const useRegisterLogic = () => {
     resolver: zodResolver(registerSchema),
   });
 
-  const { mutate, isPending, error } = useRegisterMutation({
+  const { mutate, isPending, error } = useRegisterMutation({});
 
-  });
-  
   const [email, setEmail] = useState<string | null>(null);
 
   const onSubmit = async (registrationValues: RegistrationForm) => {

@@ -5,8 +5,8 @@ import { ProfileFormValues } from '..';
 import { useForm } from 'react-hook-form';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import useGetUserProfileInfoQuery from '@/react-query/query/tours/useGetUserProfileInfoQuery';
 import useEditProfileMutation from '@/react-query/mutation/profile/useEditProfileMutation';
+import useGetUserProfileInfoQuery from '@/react-query/query/profile/useGetUserProfileInfoQuery';
 
 const useProfileLogic = () => {
   const { handleLogout } = useHeaderToolsLogic();

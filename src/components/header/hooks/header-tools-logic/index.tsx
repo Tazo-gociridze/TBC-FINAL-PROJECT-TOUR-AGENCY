@@ -10,13 +10,14 @@ const useHeaderToolsLogic = () => {
   const navigate = useNavigate();
   const { t } = useTranslation('header');
 
-  const { mutate } = useLogoutMutation({mutationOption: {
-    onSuccess: () => {
-      setUser(null);
-      navigate('/login');
+  const { mutate } = useLogoutMutation({
+    mutationOption: {
+      onSuccess: () => {
+        setUser(null);
+        navigate('/login');
+      },
     },
-  }})
-
+  });
 
   const handleLogout = async () => {
     await mutate();
