@@ -3,6 +3,7 @@ import useHeaderToolsLogic from '../../hooks/header-tools-logic';
 import { FC, useCallback, useEffect } from 'react';
 import { FaCircle } from 'react-icons/fa';
 import { Button } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderMenuProps {
   isMenuActive: boolean;
@@ -10,7 +11,8 @@ interface HeaderMenuProps {
 }
 
 const HeaderMenu: FC<HeaderMenuProps> = ({ setIsMenuActive, isMenuActive }) => {
-  const { t, handleLogout, user } = useHeaderToolsLogic();
+  const { t,  user } = useHeaderToolsLogic();
+  const { t: profileT } = useTranslation('profile');
 
   const handleResize = useCallback(() => {
     if (window.innerWidth > 1023) {
@@ -28,11 +30,6 @@ const HeaderMenu: FC<HeaderMenuProps> = ({ setIsMenuActive, isMenuActive }) => {
     setIsMenuActive(false);
   };
 
-  const logout = () => {
-    handleLogout();
-    setIsMenuActive(false);
-  };
-  
   return (
     <>
       <div
@@ -65,12 +62,19 @@ const HeaderMenu: FC<HeaderMenuProps> = ({ setIsMenuActive, isMenuActive }) => {
 
         <div className="flex px-7 pt-3 sm:hidden md:hidden lg:hidden">
           {user ? (
-            <Button className="w-full bg-blue-400 py-5 text-white" onClick={logout}>
-              {t('headerLogout')}
-            </Button>
+            <Link to={'profile'} className='w-full'>
+              <Button
+                className="w-full bg-blue-400 py-5 text-white"
+                onClick={() => setIsMenuActive(false)}
+              >
+                {profileT('profile')}
+              </Button>
+            </Link>
           ) : (
-            <Link to={`/login`}>
-              <Button className="w-full">{t('headerLogin')}</Button>
+            <Link to={`/login`}  className='w-full '>
+              <Button className="w-full bg-blue-400" onClick={() => setIsMenuActive(false)}>
+                {t('headerLogin')}
+              </Button>
             </Link>
           )}
         </div>

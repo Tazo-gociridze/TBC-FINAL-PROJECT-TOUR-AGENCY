@@ -1,4 +1,4 @@
-import { UpdateUserProfileData, fetchUpdateProfile } from '@/api/profile/edit';
+import { fetchUpdateProfile } from '@/api/profile/edit';
 import { UseMutationResult, useMutation } from '@tanstack/react-query';
 import { PROFILE_MUTATION_KEY } from './enum';
 import {
@@ -16,10 +16,9 @@ const useEditProfileMutation = ({
   UpdateProfileData
 > => {
   const mutationFn = async (updateProfileData: UpdateProfileData) => {
-    const { id } = updateProfileData;
-    const updateData: UpdateUserProfileData = { id };
+    console.log(updateProfileData)
 
-    await fetchUpdateProfile(updateData);
+    await fetchUpdateProfile(updateProfileData);
     return {
       message: 'Profile updated successfully',
       updatedAt: new Date().toISOString(),

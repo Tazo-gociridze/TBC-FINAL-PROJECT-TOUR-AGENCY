@@ -47,7 +47,6 @@ export const useTourFiltersLogic = ({ handleSearch, handleSort }: TourFiltersLog
     if (currentSort !== sort) {
       setSort(currentSort);
     }
-
   }, [searchParams, sort, searchTerm]);
 
   return {
