@@ -10,7 +10,9 @@ const RegisterHeader: FC<RegisterHeaderProps> = ({ isPending }) => {
   const { t } = useTranslation('registration');
   return (
     <>
-      <h1 className="text-3xl font-bold text-[#443f3f] dark:text-white text-center mb-16">{t('registration')}</h1>
+      <h1 className="mb-16 text-center text-3xl font-bold text-[#443f3f] dark:text-white">
+        {t('registration')}
+      </h1>
       {isPending && <p>Loading...</p>}
     </>
   );

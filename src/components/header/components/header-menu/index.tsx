@@ -9,10 +9,7 @@ interface HeaderMenuProps {
 }
 
 const HeaderMenu: FC<HeaderMenuProps> = ({ setIsMenuActive, isMenuActive }) => {
-  
-  const {
-    resetState
-  } = useHeaderMenuLogic({setIsMenuActive})
+  const { resetState } = useHeaderMenuLogic({ setIsMenuActive });
 
   return (
     <>

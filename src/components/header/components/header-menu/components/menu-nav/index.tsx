@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { FaCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const MenuNav:FC<{resetState: () => void}> = ({resetState}) => {
+const MenuNav: FC<{ resetState: () => void }> = ({ resetState }) => {
   return (
     <div className="flex flex-col text-white *:flex *:w-full *:items-center *:justify-between *:bg-[#16330c] *:px-7 *:py-5 *:dark:bg-[#1a1919]">
       <Link className="hover:bg-[#305e20] dark:hover:bg-[#312f2f]" onClick={resetState} to={'/'}>

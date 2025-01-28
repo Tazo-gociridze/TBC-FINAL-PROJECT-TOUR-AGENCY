@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const HeaderLogo = ({setIsMenuActive}: {setIsMenuActive: (state: boolean) => void}) => {
+const HeaderLogo = ({ setIsMenuActive }: { setIsMenuActive: (state: boolean) => void }) => {
   return (
     <div>
       <Link to={`/`} onClick={() => setIsMenuActive(false)}>
