@@ -51,7 +51,7 @@ const RegisterInputs: FC<RegisterInputsProps> = ({ control, errors }) => {
           </>
         )}
       />
-      
+
       <Controller
         name="password"
         control={control}

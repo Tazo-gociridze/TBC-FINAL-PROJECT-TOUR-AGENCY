@@ -9,14 +9,14 @@ const Register = () => {
     useRegisterLogic();
 
   return (
-    <section className="flex h-screen flex-col items-center justify-center gap-y-10">
+    <section className="flex mt-10 flex-col items-center justify-center gap-y-10">
       {email ? (
         <EmailConfirmation email={email} getEmailServiceLink={getEmailServiceLink} />
       ) : (
-        <>
+        <div className='mt-36 flex-col items-center justify-center'>
           <RegisterHeader error={error} isPending={isPending} />
           <form
-            className="flex w-[310px] flex-col gap-y-5 rounded-lg bg-[#faf7f7] p-8 shadow-sm sm:w-[500px]"
+            className="flex w-[310px] flex-col gap-y-5 rounded-lg bg-[#faf7f7] p-8 shadow-sm sm:w-[500px] mb-60"
             onSubmit={handleSubmit(onSubmit)}
             action=""
             autoComplete="chrome-off"
@@ -24,7 +24,7 @@ const Register = () => {
             <RegisterInputs control={control} errors={errors} />
             <RegisterFooter />
           </form>
-        </>
+        </div>
       )}
     </section>
   );

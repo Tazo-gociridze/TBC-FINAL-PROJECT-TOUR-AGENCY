@@ -16,7 +16,7 @@ const useEditProfileMutation = ({
   UpdateProfileData
 > => {
   const mutationFn = async (updateProfileData: UpdateProfileData) => {
-    console.log(updateProfileData)
+    console.log(updateProfileData);
 
     await fetchUpdateProfile(updateProfileData);
     return {
