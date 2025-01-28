@@ -47,8 +47,8 @@ export const useTourFiltersLogic = ({ handleSearch, handleSort }: TourFiltersLog
     if (currentSort !== sort) {
       setSort(currentSort);
     }
-    //eslint-disable-next-line
-  }, [searchParams]);
+
+  }, [searchParams, sort, searchTerm]);
 
   return {
     searchTerm,

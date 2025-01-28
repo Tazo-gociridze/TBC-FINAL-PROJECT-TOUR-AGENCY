@@ -12,9 +12,7 @@ const useRegisterMutation = ({
   RegisterErrorResponse,
   RegistrationForm
 > => {
-  const mutationFn = async (
-    registrationValues: RegistrationForm
-  ): Promise<AuthData> => {
+  const mutationFn = async (registrationValues: RegistrationForm): Promise<AuthData> => {
     const result: RegisterResult = await register(registrationValues);
 
     if (!result.user) {

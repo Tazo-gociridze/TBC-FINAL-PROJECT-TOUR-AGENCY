@@ -45,12 +45,14 @@ const useRegisterLogic = () => {
     resolver: zodResolver(registerSchema),
   });
 
-  const { mutate, isPending, error } = useRegisterMutation({mutationOptions: {
-    onSuccess: (data: AuthData) => {
-      console.log(data)
-      setEmail(data.user?.email || null);
+  const { mutate, isPending, error } = useRegisterMutation({
+    mutationOptions: {
+      onSuccess: (data: AuthData) => {
+        console.log(data);
+        setEmail(data.user?.email || null);
+      },
     },
-  }});
+  });
 
   const [email, setEmail] = useState<string | null>(null);
 

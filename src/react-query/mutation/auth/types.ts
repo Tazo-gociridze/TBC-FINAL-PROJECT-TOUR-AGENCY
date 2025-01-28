@@ -43,7 +43,6 @@ export interface UseLogoutMutationArgs {
 
 // REGISTER ////////////////
 
-
 export interface RegisterErrorResponse {
   message: string;
   statusCode: number;

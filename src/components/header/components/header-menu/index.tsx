@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import useHeaderToolsLogic from '../../hooks/header-tools-logic';
-import { FC, useEffect } from 'react';
+import { FC, useCallback, useEffect } from 'react';
 import { FaCircle } from 'react-icons/fa';
 import { Button } from 'antd';
 
@@ -12,19 +12,18 @@ interface HeaderMenuProps {
 const HeaderMenu: FC<HeaderMenuProps> = ({ setIsMenuActive, isMenuActive }) => {
   const { t, handleLogout, user } = useHeaderToolsLogic();
 
+  const handleResize = useCallback(() => {
+    if (window.innerWidth > 1023) {
+      setIsMenuActive(false);
+    }
+  }, [setIsMenuActive]);
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1023) {
-        setIsMenuActive(false);
-      }
-    };
     handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
-    //eslint-disable-next-line
-  }, []);
-
+  }, [handleResize]);
   const resetState = () => {
     setIsMenuActive(false);
   };
@@ -33,6 +32,7 @@ const HeaderMenu: FC<HeaderMenuProps> = ({ setIsMenuActive, isMenuActive }) => {
     handleLogout();
     setIsMenuActive(false);
   };
+  
   return (
     <>
       <div
