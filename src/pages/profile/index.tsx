@@ -29,7 +29,7 @@ const Profile: FC = () => {
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100 p-4 duration-300 dark:bg-[#00000000]">
       <Card
-        className="!dark:text-white w-full max-w-full md:max-w-xl xl:max-w-2xl rounded-lg bg-white p-6 shadow-md md:p-8 dark:bg-gray-300"
+        className="!dark:text-white w-full max-w-full rounded-lg bg-white p-6 shadow-md md:max-w-xl md:p-8 xl:max-w-2xl dark:bg-gray-300"
         title={<Title level={3}>{t('profile')}</Title>}
       >
         {isEditing ? (

@@ -17,7 +17,7 @@ const ProfileButtons: FC<ProfileButtonsProps> = ({
   const { t } = useTranslation('profile');
   return (
     <div className="mt-6 *:text-[11px]">
-      <Button type="primary" className='mr-5' danger onClick={handleLogoutProfile}>
+      <Button type="primary" className="mr-5" danger onClick={handleLogoutProfile}>
         {t('logout')}
       </Button>
       {!isEditing && (
