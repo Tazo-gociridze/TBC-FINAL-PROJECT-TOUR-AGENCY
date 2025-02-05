@@ -45,9 +45,9 @@ const TourDetails = () => {
 
   return (
     <div className="flex min-h-screen w-screen items-center bg-gray-100 px-3 duration-300 sm:px-6 md:px-12 lg:px-20 xl:px-28 dark:bg-[#00000000]">
-      <div className="flex h-full w-full flex-col items-center justify-center">
+      <div className="flex h-full w-full flex-col items-center justify-center pt-8">
         <TourGoBack />
-        <div className="mb-16 mt-16 grid h-auto w-full grid-cols-1 bg-gray-200 sm:h-auto md:h-auto md:grid-cols-1 lg:h-3/6 lg:grid-cols-2 xl:h-4/6 dark:bg-gray-300">
+        <div className="mb-16 mt-10 grid h-auto w-full grid-cols-1 bg-gray-200 sm:h-auto md:h-auto md:grid-cols-1 lg:h-3/6 lg:grid-cols-2 xl:h-4/6 dark:bg-gray-300">
           <DetailsImage image_url={image_url} />
           <TourInfo data={data} />
         </div>

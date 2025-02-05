@@ -15,7 +15,7 @@ export const getTours = async (
   sort: string,
   searchTerm: string,
   pageParam: number = 0,
-  pageSize: number = 15
+  pageSize: number = 6
 ): Promise<{ data: TourData[]; nextPage: number | null }> => {
   try {
     let query = supabase

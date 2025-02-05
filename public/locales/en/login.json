@@ -2,5 +2,6 @@
   "emailPlaceholder": "E-mail",
   "passwordPlaceholder": "Password",
   "doYouHaveAccount": "Do you have an account?",
-  "register": "Registration"
+  "register": "Registration",
+  "invalid email or password": "invalid email or password"
 }

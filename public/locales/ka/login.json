@@ -2,5 +2,6 @@
   "emailPlaceholder": "ემაილი",
   "passwordPlaceholder": "პაროლი",
   "doYouHaveAccount": "უკვე გააქვთ ანგარიში?",
-  "register": "რეგისტრაცია"
+  "register": "რეგისტრაცია",
+  "invalid email or password": "ელ-ფოსტა ან პაროლი შეყვანილია არასწორად"
 }

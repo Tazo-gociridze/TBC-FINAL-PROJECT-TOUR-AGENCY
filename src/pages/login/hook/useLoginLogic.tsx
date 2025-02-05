@@ -1,18 +1,15 @@
 import { LoginForm, UserProfile } from '@/api/auth/auth.types';
-
 import useLoginMutation from '@/react-query/mutation/auth/useLoginMutation';
 import { useAuth } from '@/store/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { message } from 'antd';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { z } from 'zod';
+import { loginSchema } from '../login.schema';
 
 const useLoginLogic = () => {
-  const loginSchema = z.object({
-    email: z.string().email({ message: 'Invalid email address' }),
-    password: z.string().min(6, { message: 'Password must be at least 6 characters' }),
-  });
-
+  const { t } = useTranslation('login')
   const navigate = useNavigate();
   const [, setUser] = useAuth();
 
@@ -35,6 +32,9 @@ const useLoginLogic = () => {
         navigate(`/`);
         setUser(user);
       },
+      onError: () => {
+        message.error(t('invalid email or password'))
+      }
     },
   });
 

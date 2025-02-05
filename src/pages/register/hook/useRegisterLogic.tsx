@@ -1,35 +1,15 @@
 import { RegistrationForm } from '@/api/auth/auth.types';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useTranslation } from 'react-i18next';
 import useRegisterMutation from '@/react-query/mutation/auth/useRegisterMutation';
 import { AuthData } from '@/utils/userType';
+import { useRegisterSchema } from './register.schema';
+import { message } from 'antd';
 
 const useRegisterLogic = () => {
-  const { t } = useTranslation('zodRegistration');
 
-  const registerSchema = useMemo(() => {
-    return z
-      .object({
-        username: z
-          .string()
-          .min(3, { message: t('Username must be at least 3 characters') })
-          .max(20, { message: t('Username must be at most 20 characters') }),
-        email: z.string().email({ message: t('Invalid email address') }),
-        phone: z
-          .string()
-          .regex(/^\+?\d{10,15}$/, { message: t('Invalid phone number') })
-          .min(10, { message: t('Phone number must be at least 10 characters') }),
-        password: z.string().min(6, { message: t('Password must be at least 6 characters') }),
-        repeatPassword: z.string(),
-      })
-      .refine((data) => data.password === data.repeatPassword, {
-        message: t('Passwords do not match'),
-        path: ['repeatPassword'],
-      });
-  }, [t]);
+  const { registerSchema } = useRegisterSchema()
 
   const {
     control,
@@ -48,9 +28,11 @@ const useRegisterLogic = () => {
   const { mutate, isPending, error } = useRegisterMutation({
     mutationOptions: {
       onSuccess: (data: AuthData) => {
-        console.log(data);
         setEmail(data.user?.email || null);
       },
+      onError: () => {
+        message.error('Something went wrong')
+      }
     },
   });
 
